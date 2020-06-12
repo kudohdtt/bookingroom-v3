@@ -13,6 +13,7 @@ import android.widget.ImageView;
 import android.widget.TextView;
 import android.widget.Toast;
 import com.learnadroid.myfirstapp.R;
+import com.learnadroid.myfirstapp.dangnhap.AccountManager;
 import com.learnadroid.myfirstapp.database.ConnectionClass;
 import com.learnadroid.myfirstapp.roomtype.roomTypeResult;
 
@@ -27,11 +28,11 @@ public class orderDetail extends AppCompatActivity {
     ProgressDialog progressDialog;
     ConnectionClass connectionClass;
 
-    private String hotelId;
+    private int hotelId;
     private int roomtypeId;
     private Date checkindate;
     private Date checkoutdate;
-    private String customerId;
+    private int customerId;
     private int roomId;
     private int keyId;
     private String state;
@@ -87,12 +88,12 @@ public class orderDetail extends AppCompatActivity {
         gia = findViewById(R.id.textView10);
         key = findViewById(R.id.textView18);
 
-        Intent intent1 = getIntent();
-        customerId = intent1.getStringExtra("customerId");
-        //chưa có danh sách khách sạn đã đặt phòng
-        customerId = "0";
-        hotelId = intent1.getStringExtra("hotelId");
-        hotelId = "0";
+
+        customerId = AccountManager.customerId;
+        hotelId = AccountManager.hotelId;
+        keyId = AccountManager.roomId;
+
+
         anhxa ax = new anhxa();
         ax.execute();
 
@@ -100,7 +101,7 @@ public class orderDetail extends AppCompatActivity {
         back.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                startActivity(new Intent(orderDetail.this, roomTypeResult.class));
+                startActivity(new Intent(orderDetail.this, DsKhachsanDadat.class));
             }
         });
         // hủy phòng
@@ -137,7 +138,7 @@ public class orderDetail extends AppCompatActivity {
 
                     //lay id
                     String query1 = "SELECT * FROM hotel where id_hotel = " + hotelId;
-                    String query3 = "SELECT * FROM booking where id_customer = " +customerId;
+                    String query3 = "SELECT * FROM booking where id_room = " +keyId;
 
                     try {
                         //lay thong tin khach san
@@ -160,13 +161,11 @@ public class orderDetail extends AppCompatActivity {
                         ResultSet rs4 = stmt4.executeQuery(query3);
 
                         while (rs4.next()) {
-                            keyId = rs4.getInt(1);
                             key.setText("BK2020KEY"+keyId);
                             checkindate = rs4.getDate(2);
+                            checkoutdate = rs4.getDate(3);
                             cindate.setText("Check in : "+ checkindate.toString().split(" ")[0]);
                             codate.setText("Check out : " +checkoutdate.toString().split(" ")[0]);
-                            checkoutdate = rs4.getDate(3);
-                            roomId = rs4.getInt(4);
                             state = rs4.getString(6);
                         }
                         //lay thong tin phong dat

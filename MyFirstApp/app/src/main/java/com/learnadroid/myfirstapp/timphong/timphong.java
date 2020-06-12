@@ -34,9 +34,7 @@ public class timphong extends AppCompatActivity {
     private EditText editAdult;
     private EditText editChildrent;
 
-    private String txt2;
-    private String txt3;
-    private String txt4;
+
     private String CIdate;
     private String COdate;
 
@@ -77,12 +75,9 @@ public class timphong extends AppCompatActivity {
         ERcheckin = findViewById(R.id.ERcheckin2);
         ERcheckout = findViewById(R.id.ERcheckout2);
 
-        txt2 = checkindate.getText().toString();
-        txt3 = checkoutdate.getText().toString();
-        txt4 = editAdult.getText().toString();
         //lấy id_hotel mà API gg map và lịch trả về
 
-        final int hotelId = AccountManager.hotelid;
+        final int hotelId = AccountManager.hotelId;
 
         //lấy thời gian checkin checkout mà lịch trả về
         CIdate = AccountManager.checkindate;
@@ -110,7 +105,8 @@ public class timphong extends AppCompatActivity {
         search.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                if(!isValidCIdate && !isValidCodate && !isValidAdults && !isValidChildrent && txt2.trim().equals("") && txt3.trim().equals("") && txt4.trim().equals("")){
+                if(!isValidCIdate && !isValidCodate && !isValidAdults && !isValidChildrent && checkoutdate.getText().toString().trim().equals("") && checkindate.getText().toString().trim().equals("")
+                        && editAdult.getText().toString().trim().equals("")){
                     Toast.makeText(getBaseContext(), "Please check all field again !", Toast.LENGTH_LONG).show();
                 }else {
                     Intent intent = new Intent(timphong.this, roomTypeResult.class);

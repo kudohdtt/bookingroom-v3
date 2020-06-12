@@ -82,7 +82,7 @@ public class hotelResult extends AppCompatActivity {
             @Override
             public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
                 Hotel ht = ListHotel.get(position);
-                AccountManager.hotelid = ht.getId();
+                AccountManager.hotelId = ht.getId();
                 Intent intent = new Intent(hotelResult.this, roomTypeResult.class);
                 startActivity(intent);
             }

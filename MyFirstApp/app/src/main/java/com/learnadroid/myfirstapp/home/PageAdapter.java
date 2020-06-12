@@ -9,6 +9,8 @@ import androidx.fragment.app.Fragment;
 import androidx.fragment.app.FragmentManager;
 import androidx.fragment.app.FragmentPagerAdapter;
 
+import com.learnadroid.myfirstapp.ordered.DsKhachsanDadat;
+
 public class PageAdapter extends FragmentPagerAdapter {
 
     private int numOfTabs = 3;
@@ -27,7 +29,7 @@ public class PageAdapter extends FragmentPagerAdapter {
             case 0:
                 return new SearchHotel();
             case 1:
-                return new SearchHotel();
+                return new DsKhachsanDadat();
             case 2:
                 return new Profile();
 

@@ -94,6 +94,7 @@ public class SearchHotel extends Fragment {
             @Override
             public void onClick(View v) {
                 Intent intent = new Intent(getActivity(), checkin.class);
+                AccountManager.keyword = hotel.getText().toString();
                 startActivity(intent);
             }
         });
@@ -102,6 +103,7 @@ public class SearchHotel extends Fragment {
             @Override
             public void onClick(View v) {
                 Intent intent = new Intent(getActivity(), checkout.class);
+                AccountManager.keyword = hotel.getText().toString();
                 startActivity(intent);
             }
         });
@@ -133,9 +135,9 @@ public class SearchHotel extends Fragment {
                     Toast.makeText(getContext(), "Please check all field again !", Toast.LENGTH_LONG).show();
                 }else {
                     Intent intent = new Intent(getContext(), hotelResult.class);
-                    intent.putExtra("keyword",hotel.getText().toString());
-                    intent.putExtra("checkindate",checkindate.getText().toString());
-                    intent.putExtra("checkoutdate",checkoutdate.getText().toString());
+                    AccountManager.keyword = hotel.getText().toString();
+                    AccountManager.checkindate = checkindate.getText().toString();
+                    AccountManager.checkoutdate = checkoutdate.getText().toString();
                     startActivity(intent);
                 }
 

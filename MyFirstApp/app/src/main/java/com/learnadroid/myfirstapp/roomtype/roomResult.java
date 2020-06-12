@@ -87,7 +87,7 @@ public class roomResult extends AppCompatActivity {
 
 
         roomtypeId = AccountManager.roomtypeId;
-        hotelId = AccountManager.hotelid;
+        hotelId = AccountManager.hotelId;
         checkindate = AccountManager.checkindate;
         cindate.setText("Check in : " + checkindate+"/2020");
         checkoutdate = AccountManager.checkoutdate;

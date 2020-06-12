@@ -6,7 +6,7 @@ import com.learnadroid.myfirstapp.actor.User;
 public class AccountManager {
 
     private static AccountManager instance;
-    public static  int hotelid;
+    public static  int hotelId;
     public static int userId;
     public  static  int customerId;
     public  static String  checkindate="";

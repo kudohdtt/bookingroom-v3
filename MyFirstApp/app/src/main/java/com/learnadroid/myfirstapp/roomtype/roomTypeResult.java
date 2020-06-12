@@ -69,7 +69,7 @@ public class roomTypeResult extends AppCompatActivity {
 
         adapter = new roomTypeAdapter(this, R.layout.mau_loai_phong, arrayloaiphong);
         //lấy thông tin id_hotel
-        hotelId = AccountManager.hotelid;
+        hotelId = AccountManager.hotelId;
 
 //        Toast.makeText(getApplicationContext(), "hotel ID: " + hotelId, Toast.LENGTH_LONG).show();
 //        Toast.makeText(getApplicationContext(), "checkindate: " + checkindate, Toast.LENGTH_LONG).show();
@@ -84,6 +84,7 @@ public class roomTypeResult extends AppCompatActivity {
                 Intent intent = new Intent(roomTypeResult.this, roomResult.class);
                 AccountManager.roomtypeId = tr.getId();
                 startActivity(intent);
+                progressDialog.dismiss();
             }
         });
 

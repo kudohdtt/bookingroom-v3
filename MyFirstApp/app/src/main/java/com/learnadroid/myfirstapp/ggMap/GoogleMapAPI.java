@@ -165,7 +165,7 @@ public class GoogleMapAPI extends FragmentActivity implements OnMapReadyCallback
                 int id = (int) marker.getTag();
                 Toast.makeText(getApplicationContext(), "" + id, Toast.LENGTH_LONG).show();
                 Intent intent = new Intent(GoogleMapAPI.this, timphong.class);
-                AccountManager.hotelid = id;
+                AccountManager.hotelId = id;
                 startActivity(intent);
             }
 
