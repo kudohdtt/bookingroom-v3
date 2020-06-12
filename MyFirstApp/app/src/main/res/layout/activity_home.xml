@@ -51,7 +51,7 @@
             android:layout_height="match_parent"
             android:scaleX="1.5"
             android:scaleY="1.5"
-            app:srcCompat="@drawable/ic_order" />
+            app:srcCompat="@drawable/ic_order_foreground" />
 
 
         <ImageView
@@ -60,7 +60,7 @@
             android:layout_height="match_parent"
             android:scaleX="1.5"
             android:scaleY="1.5"
-            app:srcCompat="@drawable/ic_profile" />
+            app:srcCompat="@drawable/ic_profile_foreground" />
     </LinearLayout>
 
 
