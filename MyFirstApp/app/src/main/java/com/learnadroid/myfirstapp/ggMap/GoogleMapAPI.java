@@ -38,6 +38,7 @@ import com.google.android.gms.tasks.OnSuccessListener;
 import com.learnadroid.myfirstapp.R;
 import com.learnadroid.myfirstapp.actor.Hotel;
 import com.learnadroid.myfirstapp.database.ConnectionClass;
+import com.learnadroid.myfirstapp.home.MainActivity;
 import com.learnadroid.myfirstapp.timkiemkhachsan.timkiem;
 import com.learnadroid.myfirstapp.timphong.timphong;
 
@@ -63,8 +64,6 @@ public class GoogleMapAPI extends FragmentActivity implements OnMapReadyCallback
     private FusedLocationProviderClient fusedLocationProviderClient;
 
 
-    String place;
-
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -82,7 +81,7 @@ public class GoogleMapAPI extends FragmentActivity implements OnMapReadyCallback
         back.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent intent = new Intent(GoogleMapAPI.this, timkiem.class);
+                Intent intent = new Intent(GoogleMapAPI.this, MainActivity.class);
                 startActivity(intent);
             }
         });
