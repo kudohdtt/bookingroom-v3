@@ -113,6 +113,8 @@ public class MainActivity extends AppCompatActivity {
                                 //z = "Login successfull - Mãi bên nhau bạn nhé!!";
 
                                 int idCustomer = resultQueryUser.getInt(4);
+                                AccountManager.customerId = idCustomer;
+                                AccountManager.userId = idCustomer;
 
                                 String queryCustomer = " select * from customer where id_customer='" + idCustomer + "'";
 
@@ -121,6 +123,7 @@ public class MainActivity extends AppCompatActivity {
 
                                     int id = resultQueryCustomer.getInt(1);
                                     String email = resultQueryCustomer.getString(3);
+                                    AccountManager.gmail = email;
                                     String fulName = resultQueryCustomer.getString(2);
                                     String numberPhone = resultQueryCustomer.getString(4);
                                     String sex = "Male";

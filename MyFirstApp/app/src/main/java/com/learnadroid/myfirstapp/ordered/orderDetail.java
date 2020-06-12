@@ -14,14 +14,12 @@ import android.widget.TextView;
 import android.widget.Toast;
 import com.learnadroid.myfirstapp.R;
 import com.learnadroid.myfirstapp.database.ConnectionClass;
-import com.learnadroid.myfirstapp.roomtype.cacloaiphong;
-import com.learnadroid.myfirstapp.timkiemkhachsan.maXacNhan;
+import com.learnadroid.myfirstapp.roomtype.roomTypeResult;
+
 import java.sql.Connection;
 import java.sql.Date;
 import java.sql.ResultSet;
 import java.sql.Statement;
-import android.os.Bundle;
-
 
 
 public class orderDetail extends AppCompatActivity {
@@ -89,7 +87,6 @@ public class orderDetail extends AppCompatActivity {
         gia = findViewById(R.id.textView10);
         key = findViewById(R.id.textView18);
 
-
         Intent intent1 = getIntent();
         customerId = intent1.getStringExtra("customerId");
         //chưa có danh sách khách sạn đã đặt phòng
@@ -103,7 +100,7 @@ public class orderDetail extends AppCompatActivity {
         back.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                startActivity(new Intent(orderDetail.this, cacloaiphong.class));
+                startActivity(new Intent(orderDetail.this, roomTypeResult.class));
             }
         });
         // hủy phòng

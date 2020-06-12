@@ -2,36 +2,30 @@ package com.learnadroid.myfirstapp.home;
 
 import android.content.Intent;
 import android.graphics.Color;
-import android.os.Build;
 import android.os.Bundle;
 import android.text.Editable;
 import android.text.TextWatcher;
 import android.view.LayoutInflater;
 import android.view.Menu;
 import android.view.MenuInflater;
-import android.view.MenuItem;
 import android.view.View;
 import android.view.ViewGroup;
-import android.view.Window;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.ImageButton;
-import android.widget.ImageView;
 import android.widget.TextView;
 import android.widget.Toast;
 
 import com.learnadroid.myfirstapp.R;
+import com.learnadroid.myfirstapp.dangnhap.AccountManager;
 import com.learnadroid.myfirstapp.ggMap.GoogleMapAPI;
 import com.learnadroid.myfirstapp.timkiemkhachsan.checkin;
 import com.learnadroid.myfirstapp.timkiemkhachsan.checkout;
-import com.learnadroid.myfirstapp.timkiemkhachsan.ketquatimkiem;
-import com.learnadroid.myfirstapp.timkiemkhachsan.timkiem;
+import com.learnadroid.myfirstapp.timkiemkhachsan.hotelResult;
 
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
-import androidx.annotation.RequiresApi;
 import androidx.fragment.app.Fragment;
-import androidx.fragment.app.FragmentActivity;
 
 public class SearchHotel extends Fragment {
 
@@ -49,12 +43,7 @@ public class SearchHotel extends Fragment {
     private TextView ERchildrent;
     private EditText editAdult;
     private EditText editChildrent;
-    //private ImageButton profile;
 
-    private String txt1;
-    private String txt2;
-    private String txt3;
-    private String txt4;
 
     //bien validate
     private Boolean isValidCity = false;
@@ -96,27 +85,15 @@ public class SearchHotel extends Fragment {
         ERcheckin = getView().findViewById(R.id.ERcheckin);
         ERcheckout = getView().findViewById(R.id.ERcheckout);
 
-        txt1 = hotel.getText().toString();
-        txt2 = checkindate.getText().toString();
-        txt3 = checkoutdate.getText().toString();
-        txt4 = editAdult.getText().toString();
+
 
         ggmap = getView().findViewById(R.id.ggmap);
 
-//        profile.setOnClickListener(new View.OnClickListener() {
-//            @Override
-//            public void onClick(View v) {
-//                Intent intent = new Intent(timkiem.this, Profile.class);
-//                startActivity(intent);
-//            }
-//        });
-
+        //gan su kien
         checkindate.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 Intent intent = new Intent(getActivity(), checkin.class);
-                intent.putExtra("checkoutdate",checkoutdate.getText().toString());
-                intent.putExtra("hotel",hotel.getText().toString());
                 startActivity(intent);
             }
         });
@@ -125,8 +102,6 @@ public class SearchHotel extends Fragment {
             @Override
             public void onClick(View v) {
                 Intent intent = new Intent(getActivity(), checkout.class);
-                intent.putExtra("checkindate",checkindate.getText().toString());
-                intent.putExtra("hotel",hotel.getText().toString());
                 startActivity(intent);
             }
         });
@@ -139,24 +114,25 @@ public class SearchHotel extends Fragment {
             }
         });
 
-        Intent intent = null;// getIntent();
-        String CIdate = intent.getStringExtra("checkindate");
+       //set cac truong tim kiem
+        String CIdate = AccountManager.checkindate;
         checkindate.setText(CIdate);
 
-        String COdate = intent.getStringExtra("checkoutdate");
+        String COdate = AccountManager.checkoutdate;
         checkoutdate.setText(COdate);
 
-        String hotelname = intent.getStringExtra("hotel");
+        String hotelname = AccountManager.keyword;
         hotel.setText(hotelname);
 
         search.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
 
-                if(!isValidCity && !isValidCIdate && !isValidCodate && !isValidAdults && !isValidChildrent && txt1.trim().equals("") && txt2.trim().equals("") && txt3.trim().equals("") && txt4.trim().equals("")){
+                if(!isValidCity && !isValidCIdate && !isValidCodate && !isValidAdults && !isValidChildrent && hotel.getText().toString().trim().equals("") && checkoutdate.getText().toString().trim().equals("")
+                        && checkindate.getText().toString().trim().equals("") && editAdult.getText().toString().trim().equals("")){
                     Toast.makeText(getContext(), "Please check all field again !", Toast.LENGTH_LONG).show();
                 }else {
-                    Intent intent = new Intent(getContext(), ketquatimkiem.class);
+                    Intent intent = new Intent(getContext(), hotelResult.class);
                     intent.putExtra("keyword",hotel.getText().toString());
                     intent.putExtra("checkindate",checkindate.getText().toString());
                     intent.putExtra("checkoutdate",checkoutdate.getText().toString());

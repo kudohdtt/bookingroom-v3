@@ -3,7 +3,6 @@ package com.learnadroid.myfirstapp.timkiemkhachsan;
 import androidx.annotation.RequiresApi;
 import androidx.appcompat.app.AppCompatActivity;
 
-import android.app.FragmentController;
 import android.content.Intent;
 import android.graphics.Color;
 import android.os.Build;
@@ -15,11 +14,9 @@ import android.view.WindowManager;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.ImageButton;
-import android.widget.ImageView;
 import android.widget.TextView;
 import android.widget.Toast;
 
-import com.learnadroid.myfirstapp.Profile;
 import com.learnadroid.myfirstapp.ggMap.GoogleMapAPI;
 import com.learnadroid.myfirstapp.R;
 
@@ -148,7 +145,7 @@ public class timkiem extends AppCompatActivity {
                 if(!isValidCity && !isValidCIdate && !isValidCodate && !isValidAdults && !isValidChildrent && txt1.trim().equals("") && txt2.trim().equals("") && txt3.trim().equals("") && txt4.trim().equals("")){
                     Toast.makeText(getBaseContext(), "Please check all field again !", Toast.LENGTH_LONG).show();
                 }else {
-                    Intent intent = new Intent(timkiem.this, ketquatimkiem.class);
+                    Intent intent = new Intent(timkiem.this, hotelResult.class);
                     intent.putExtra("keyword",hotel.getText().toString());
                     intent.putExtra("checkindate",checkindate.getText().toString());
                     intent.putExtra("checkoutdate",checkoutdate.getText().toString());

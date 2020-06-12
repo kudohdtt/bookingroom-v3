@@ -37,6 +37,7 @@ import com.google.android.gms.maps.model.MarkerOptions;
 import com.google.android.gms.tasks.OnSuccessListener;
 import com.learnadroid.myfirstapp.R;
 import com.learnadroid.myfirstapp.actor.Hotel;
+import com.learnadroid.myfirstapp.dangnhap.AccountManager;
 import com.learnadroid.myfirstapp.database.ConnectionClass;
 import com.learnadroid.myfirstapp.timkiemkhachsan.timkiem;
 import com.learnadroid.myfirstapp.timphong.timphong;
@@ -165,8 +166,7 @@ public class GoogleMapAPI extends FragmentActivity implements OnMapReadyCallback
                 int id = (int) marker.getTag();
                 Toast.makeText(getApplicationContext(), "" + id, Toast.LENGTH_LONG).show();
                 Intent intent = new Intent(GoogleMapAPI.this, timphong.class);
-                final String hotelId = Integer.toString(id);
-                intent.putExtra("hotelId",hotelId);
+                AccountManager.hotelid = id;
                 startActivity(intent);
             }
 

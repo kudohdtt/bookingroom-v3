@@ -15,24 +15,27 @@ import android.widget.TextView;
 import android.widget.Toast;
 
 import com.learnadroid.myfirstapp.R;
+import com.learnadroid.myfirstapp.dangnhap.AccountManager;
 import com.learnadroid.myfirstapp.database.ConnectionClass;
+import com.learnadroid.myfirstapp.home.SearchHotel;
 import com.learnadroid.myfirstapp.timkiemkhachsan.maXacNhan;
 
+import java.nio.channels.AcceptPendingException;
 import java.sql.Connection;
 import java.sql.ResultSet;
 import java.sql.Statement;
 
-public class Xacnhan extends AppCompatActivity {
+public class roomResult extends AppCompatActivity {
 
     ProgressDialog progressDialog;
     ConnectionClass connectionClass;
 
-    private String hotelId;
-    private String roomtypeId;
+    private int hotelId;
+    private int roomtypeId;
     private String checkindate;
     private String checkoutdate;
     private int id_room;
-    private String customerId;
+    private int customerId;
 
     private Button back;
     private Button cf;
@@ -82,12 +85,12 @@ public class Xacnhan extends AppCompatActivity {
         codate = findViewById(R.id.textView8);
         gia = findViewById(R.id.textView10);
 
-        Intent intent1 = getIntent();
-        roomtypeId = intent1.getStringExtra("roomtypeId");
-        hotelId = intent1.getStringExtra("hotelId");
-        checkindate = intent1.getStringExtra("checkindate");
+
+        roomtypeId = AccountManager.roomtypeId;
+        hotelId = AccountManager.hotelid;
+        checkindate = AccountManager.checkindate;
         cindate.setText("Check in : " + checkindate+"/2020");
-        checkoutdate = intent1.getStringExtra("checkoutdate");
+        checkoutdate = AccountManager.checkoutdate;
         codate.setText("Check out : " + checkoutdate + "/2020");
 //        Toast.makeText(getApplicationContext(), "roomtype ID: " + roomtypeId, Toast.LENGTH_LONG).show();
 //        Toast.makeText(getApplicationContext(), "checkindate: " + checkindate, Toast.LENGTH_LONG).show();
@@ -99,18 +102,14 @@ public class Xacnhan extends AppCompatActivity {
         back.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                startActivity(new Intent(Xacnhan.this, cacloaiphong.class));
+                startActivity(new Intent(roomResult.this, roomTypeResult.class));
             }
         });
 
         cf.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent intent = new Intent(Xacnhan.this, maXacNhan.class);
-                intent.putExtra("checkindate",checkindate);
-                intent.putExtra("checkoutdate",checkoutdate);
-                intent.putExtra("roomId",id_room);
-                intent.putExtra("customerId",customerId);
+                Intent intent = new Intent(roomResult.this, maXacNhan.class);
                 startActivity(intent);
             }
         });
