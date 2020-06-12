@@ -12,16 +12,10 @@ import androidx.fragment.app.FragmentPagerAdapter;
 public class PageAdapter extends FragmentPagerAdapter {
 
     private int numOfTabs = 3;
-    ImageView searchIcon;
-    ImageView orderIcon;
-    ImageView profileIcon;
+
 
     public PageAdapter(@NonNull FragmentManager fm, int behavior) {
         super(fm, behavior);
-
-    }
-
-    private void SetactiveIcon(int pos) {
 
     }
 
