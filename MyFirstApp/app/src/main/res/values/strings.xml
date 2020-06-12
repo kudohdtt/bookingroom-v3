@@ -1,0 +1,36 @@
+<resources>
+    <string name="app_name">MyFirstApp</string>
+
+    <string-array name="country_arrays">
+        <item>Malaysia</item>
+        <item>United States</item>
+        <item>Indonesia</item>
+        <item>France</item>
+        <item>Italy</item>
+        <item>Singapore</item>
+        <item>New Zealand</item>
+        <item>India</item>
+    </string-array>
+    <string name="title_activity_main3">Main3Activity</string>
+
+    <string name="navigation_drawer_open">Open navigation drawer</string>
+    <string name="navigation_drawer_close">Close navigation drawer</string>
+    <string name="children">Children</string>
+    <string name="booking_room">Booking Room</string>
+    <string name="check_in">Check in</string>
+    <string name="check_out">Check out</string>
+    <string name="search">Search</string>
+    <string name="city_hotel">City, Hotel</string>
+    <string name="check_in_date">Check in date</string>
+    <string name="ok">OK</string>
+    <string name="t_m_ki_m2">Tìm kiếm</string>
+    <string name="t2">Đã đặt</string>
+    <string name="t_i_kho_n2">Tài khoản</string>
+    <string name="adults">Adults</string>
+    <string name="t_m_ki_m">Tìm kiếm</string>
+    <string name="t">Đã đặt</string>
+    <string name="t_i_kho_n">Tài khoản</string>
+    <string name="check_out_date">Check out date</string>
+
+    <string name="action_settings">Settings</string>
+</resources>

@@ -1,0 +1,399 @@
+<?xml version="1.0" encoding="utf-8"?><!DOCTYPE androidx.constraintlayout.widget.ConstraintLayout>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:backgroundTint="#EF5350"
+    tools:context=".timkiemkhachsan.timkiem">
+
+
+    <FrameLayout
+        android:id="@+id/frameLayoutCheckin"
+        android:layout_width="match_parent"
+        android:layout_height="575.571dp"
+        android:layout_marginTop="76dp"
+
+        android:foreground="#CAFFA726"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="1.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
+        android:id="@+id/textViewChild"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="40dp"
+        android:layout_marginEnd="10dp"
+        android:fontFamily="serif"
+        android:text="@string/children"
+        android:textColor="#592A06"
+        android:textSize="18sp"
+        android:textStyle="bold|italic"
+        app:layout_constraintEnd_toStartOf="@+id/editChild"
+        app:layout_constraintTop_toBottomOf="@+id/txtCOdate" />
+
+    <TextView
+        android:id="@+id/logo"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/booking_room"
+        android:textAppearance="@style/TextAppearance.AppCompat.Body1"
+        android:textColor="#FFA726"
+        android:textColorHighlight="#FFFFFF"
+        android:textSize="30sp"
+        android:textStyle="bold"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintHorizontal_bias="0.57"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.041" />
+
+    <ImageView
+        android:id="@+id/chiecla"
+        android:layout_width="48dp"
+        android:layout_height="35dp"
+        android:layout_marginStart="72dp"
+        android:layout_marginTop="27dp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:srcCompat="@drawable/chiela" />
+
+
+    <Button
+        android:id="@+id/buttonSearch"
+        android:layout_width="250dp"
+        android:layout_height="40dp"
+        android:layout_marginStart="150dp"
+        android:layout_marginEnd="150dp"
+        android:layout_marginBottom="130dp"
+        android:background="@drawable/bobutton"
+        android:fontFamily="sans-serif-condensed-medium"
+        android:gravity="center"
+        android:linksClickable="false"
+        android:text="@string/search"
+        android:textAppearance="@style/TextAppearance.AppCompat.Body1"
+        android:textColor="#FFFFFF"
+        android:textStyle="bold|italic"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.48"
+        app:layout_constraintStart_toStartOf="parent"
+        tools:targetApi="p" />
+
+    <TextView
+        android:id="@+id/cityhotel"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="50dp"
+        android:layout_marginEnd="230dp"
+        android:fontFamily="serif"
+        android:text="@string/city_hotel"
+        android:textColor="#592A06"
+        android:textSize="18sp"
+        android:textStyle="bold|italic"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/hotelsearch" />
+
+    <TextView
+        android:id="@+id/textViewCheckin"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="60dp"
+        android:layout_marginTop="29dp"
+        android:fontFamily="serif"
+        android:text="@string/check_in"
+        android:textAllCaps="false"
+        android:textColor="#592A06"
+        android:textSize="18sp"
+        android:textStyle="bold|italic"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/edtCity" />
+
+    <TextView
+        android:id="@+id/textViewCheckout"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="29dp"
+        android:layout_marginEnd="90dp"
+        android:fontFamily="serif"
+        android:text="@string/check_out"
+        android:textColor="#592A06"
+        android:textSize="18sp"
+        android:textStyle="bold|italic"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/edtCity" />
+
+    <TextView
+        android:id="@+id/textViewAdult"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="60dp"
+        android:layout_marginTop="40dp"
+        android:layout_marginEnd="14dp"
+        android:fontFamily="serif"
+        android:text="@string/adults"
+        android:textColor="#592A06"
+        android:textSize="18sp"
+        android:textStyle="bold|italic"
+        app:layout_constraintEnd_toStartOf="@+id/editAdult"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/txtCIdate" />
+
+    <EditText
+        android:id="@+id/edtCity"
+        android:layout_width="290dp"
+        android:layout_height="35dp"
+        android:layout_marginTop="75dp"
+        android:autofillHints=""
+        android:background="@drawable/botronedittext"
+        android:backgroundTint="@null"
+        android:inputType="text"
+        android:padding="5dp"
+        android:hint="Tên khách sạn hoặc thành phố..."
+        android:singleLine="true"
+        android:textAlignment="textStart"
+        android:textColor="#330000"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/hotelsearch" />
+
+    <EditText
+        android:id="@+id/editAdult"
+        android:hint="0"
+        android:layout_width="45dp"
+        android:layout_height="35dp"
+        android:layout_marginStart="14dp"
+        android:layout_marginTop="35dp"
+        android:background="@drawable/botronedittext"
+        android:backgroundTint="@null"
+        android:importantForAutofill="no"
+        android:inputType="number"
+        android:padding="5dp"
+        android:singleLine="true"
+        android:textAlignment="textStart"
+        android:textColor="#330000"
+        app:layout_constraintStart_toEndOf="@+id/textViewAdult"
+        app:layout_constraintTop_toBottomOf="@+id/txtCIdate" />
+
+    <EditText
+        android:id="@+id/editChild"
+        android:hint="0"
+        android:layout_width="45dp"
+        android:layout_height="35dp"
+        android:layout_marginTop="35dp"
+        android:layout_marginEnd="60dp"
+        android:autofillHints=""
+        android:background="@drawable/botronedittext"
+        android:backgroundTint="@null"
+        android:inputType="number"
+        android:padding="5dp"
+        android:singleLine="true"
+        android:textAlignment="textStart"
+        android:textColor="#330000"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/txtCOdate" />
+
+    <ImageView
+        android:id="@+id/location"
+        android:layout_width="57dp"
+        android:layout_height="74dp"
+        android:layout_marginStart="86dp"
+        android:layout_marginTop="190dp"
+        android:layout_marginEnd="1dp"
+        app:layout_constraintBottom_toTopOf="@+id/edtCity"
+        app:layout_constraintEnd_toStartOf="@+id/edtCity"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/chiecla"
+        app:srcCompat="@drawable/ic_vitri_foreground" />
+
+    <ImageView
+        android:id="@+id/hotelsearch"
+        android:layout_width="370dp"
+        android:layout_height="116dp"
+        android:layout_marginStart="25dp"
+        android:layout_marginTop="38dp"
+        android:layout_marginEnd="25dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/chiecla"
+        app:srcCompat="@drawable/search" />
+
+    <EditText
+        android:id="@+id/txtCIdate"
+        android:focusable="false"
+        android:layout_width="120dp"
+        android:layout_height="35dp"
+        android:layout_marginStart="56dp"
+        android:layout_marginTop="8dp"
+        android:textSize="18dp"
+        android:textColor="@color/black"
+        android:gravity="center"
+        android:background="@drawable/botronedittext"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/textViewCheckin" />
+
+    <EditText
+        android:id="@+id/txtCOdate"
+        android:focusable="false"
+        android:layout_width="120dp"
+        android:layout_height="35dp"
+        android:layout_marginTop="8dp"
+        android:layout_marginEnd="56dp"
+        android:textSize="18dp"
+        android:textColor="@color/black"
+        android:gravity="center"
+        android:background="@drawable/botronedittext"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/textViewCheckout" />
+
+    <ImageView
+        android:id="@+id/imageView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="36dp"
+        android:layout_marginEnd="65dp"
+        app:layout_constraintEnd_toStartOf="@+id/txtCOdate"
+        app:layout_constraintTop_toBottomOf="@+id/edtCity"
+        app:srcCompat="@drawable/ic_calendar2_foreground" />
+
+    <ImageView
+        android:id="@+id/imageView2"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="36dp"
+        android:layout_marginEnd="61dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/edtCity"
+        app:srcCompat="@drawable/ic_calendar2_foreground" />
+
+    <ImageButton
+        android:id="@+id/ggmap"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="4dp"
+        android:layout_marginTop="68dp"
+        android:layout_marginEnd="7dp"
+        android:background="@null"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toEndOf="@+id/edtCity"
+        app:layout_constraintTop_toBottomOf="@+id/hotelsearch"
+        app:srcCompat="@drawable/ic_locationfocus_foreground" />
+    <TextView
+        android:id="@+id/ERcity"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:layout_constraintBottom_toTopOf="@+id/textViewCheckout"
+        app:layout_constraintEnd_toEndOf="@+id/edtCity"
+        app:layout_constraintStart_toStartOf="@+id/edtCity"
+        app:layout_constraintTop_toBottomOf="@+id/edtCity" />
+
+    <TextView
+        android:id="@+id/ERcheckin"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:layout_constraintBottom_toTopOf="@+id/editAdult"
+        app:layout_constraintEnd_toEndOf="@+id/txtCIdate"
+        app:layout_constraintStart_toStartOf="@+id/txtCIdate"
+        app:layout_constraintTop_toBottomOf="@+id/txtCIdate" />
+
+    <TextView
+        android:id="@+id/ERcheckout"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:layout_constraintBottom_toTopOf="@+id/editChild"
+        app:layout_constraintEnd_toEndOf="@+id/txtCOdate"
+        app:layout_constraintStart_toStartOf="@+id/txtCOdate"
+        app:layout_constraintTop_toBottomOf="@+id/txtCOdate" />
+
+    <TextView
+        android:id="@+id/ERadults"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:layout_constraintEnd_toEndOf="@+id/editAdult"
+        app:layout_constraintStart_toStartOf="@+id/editAdult"
+        app:layout_constraintTop_toBottomOf="@+id/editAdult" />
+
+    <TextView
+        android:id="@+id/ERchildrent"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:layout_constraintEnd_toEndOf="@+id/editChild"
+        app:layout_constraintStart_toStartOf="@+id/editChild"
+        app:layout_constraintTop_toBottomOf="@+id/editChild" />
+
+
+<!--    <ImageButton-->
+<!--        android:id="@+id/imageButtonFindRoom"-->
+<!--        android:layout_width="60dp"-->
+<!--        android:layout_height="60dp"-->
+<!--        android:layout_marginStart="40dp"-->
+<!--        android:layout_marginBottom="14dp"-->
+<!--        android:background="@null"-->
+<!--        app:layout_constraintBottom_toBottomOf="parent"-->
+<!--        app:layout_constraintStart_toStartOf="parent"-->
+<!--        app:srcCompat="@drawable/ic_findroom4_foreground" />-->
+
+<!--    <ImageButton-->
+<!--        android:id="@+id/imageButtonOrder"-->
+<!--        android:layout_width="60dp"-->
+<!--        android:layout_height="60dp"-->
+<!--        android:layout_marginStart="99dp"-->
+<!--        android:layout_marginEnd="99dp"-->
+<!--        android:layout_marginBottom="19dp"-->
+<!--        android:background="@null"-->
+<!--        app:layout_constraintBottom_toBottomOf="parent"-->
+<!--        app:layout_constraintEnd_toStartOf="@+id/imageButtonAccount"-->
+<!--        app:layout_constraintStart_toEndOf="@+id/imageButtonFindRoom"-->
+<!--        app:srcCompat="@drawable/ic_order_foreground" />-->
+
+<!--    <ImageButton-->
+<!--        android:id="@+id/imageButtonAccount"-->
+<!--        android:layout_width="60dp"-->
+<!--        android:layout_height="60dp"-->
+<!--        android:layout_marginEnd="40dp"-->
+<!--        android:layout_marginBottom="14dp"-->
+<!--        android:background="@null"-->
+<!--        app:layout_constraintBottom_toBottomOf="parent"-->
+<!--        app:layout_constraintEnd_toEndOf="parent"-->
+<!--        app:srcCompat="@drawable/ic_profile_foreground" />-->
+
+<!--    <TextView-->
+<!--        android:id="@+id/textViewFindRoomCO"-->
+<!--        android:layout_width="wrap_content"-->
+<!--        android:layout_height="wrap_content"-->
+<!--        android:layout_marginStart="43dp"-->
+<!--        android:layout_marginBottom="2dp"-->
+<!--        android:text="@string/t_m_ki_m"-->
+<!--        android:textAlignment="center"-->
+<!--        android:textColor="#1BA3F3"-->
+<!--        app:layout_constraintBottom_toBottomOf="parent"-->
+<!--        app:layout_constraintStart_toStartOf="parent" />-->
+
+<!--    <TextView-->
+<!--        android:id="@+id/textViewDaDatCI"-->
+<!--        android:layout_width="wrap_content"-->
+<!--        android:layout_height="wrap_content"-->
+<!--        android:layout_marginBottom="2dp"-->
+<!--        android:text="@string/t"-->
+<!--        android:textAlignment="center"-->
+<!--        app:layout_constraintBottom_toBottomOf="parent"-->
+<!--        app:layout_constraintEnd_toStartOf="@+id/textViewAccountCI"-->
+<!--        app:layout_constraintStart_toEndOf="@+id/textViewFindRoomCO" />-->
+
+<!--    <TextView-->
+<!--        android:id="@+id/textViewAccountCI"-->
+<!--        android:layout_width="wrap_content"-->
+<!--        android:layout_height="wrap_content"-->
+<!--        android:layout_marginEnd="38dp"-->
+<!--        android:layout_marginBottom="2dp"-->
+<!--        android:text="@string/t_i_kho_n"-->
+<!--        android:textAlignment="center"-->
+<!--        app:layout_constraintBottom_toBottomOf="parent"-->
+<!--        app:layout_constraintEnd_toEndOf="parent" />-->
+
+
+
+</androidx.constraintlayout.widget.ConstraintLayout>
