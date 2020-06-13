@@ -76,7 +76,7 @@
         android:id="@+id/btTieptuc"
         android:layout_width="90dp"
         android:layout_height="39dp"
-        android:background="@drawable/button_background"
+        android:background="@drawable/bobutton"
         android:text="Bắt đầu"
         android:textAllCaps="false"
         android:textColor="#e5f3fd"
