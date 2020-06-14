@@ -62,7 +62,8 @@ public class hotelListAdapter extends BaseAdapter {
         //gan gia tri
         Hotel hotel = hotelList.get(i);
         name.setText(hotel.getName());
-        star.setRating(hotel.getStar());
+        //star.setRating(hotel.getStar());
+        star.setRating(0);
         img1.setImageResource(hotel.getImage1());
         img2.setImageResource(hotel.getImage2());
         img3.setImageResource(hotel.getImage3());

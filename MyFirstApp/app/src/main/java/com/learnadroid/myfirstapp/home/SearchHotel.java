@@ -78,7 +78,6 @@ public class SearchHotel extends Fragment {
         editAdult = getView().findViewById(R.id.editAdult);
         editChildrent = getView().findViewById(R.id.editChild);
         search = getView().findViewById(R.id.buttonSearch);
-        //profile = findViewById(R.id.imageButtonAccount);
 
         ERcity = getView().findViewById(R.id.ERcity);
         ERadults = getView().findViewById(R.id.ERadults);
@@ -145,7 +144,7 @@ public class SearchHotel extends Fragment {
             }
         });
 
-
+        //Số người trưởng thành
         editAdult.addTextChangedListener(new TextWatcher() {
             @Override
             public void beforeTextChanged(CharSequence s, int start, int count, int after) {
@@ -171,7 +170,7 @@ public class SearchHotel extends Fragment {
 
             }
         });
-
+        //số trẻ em
         editChildrent.addTextChangedListener(new TextWatcher() {
             @Override
             public void beforeTextChanged(CharSequence s, int start, int count, int after) {

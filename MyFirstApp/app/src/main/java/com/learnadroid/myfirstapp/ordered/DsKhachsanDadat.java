@@ -16,10 +16,9 @@ import androidx.fragment.app.Fragment;
 
 import com.learnadroid.myfirstapp.R;
 import com.learnadroid.myfirstapp.actor.hotelOrdered;
-import com.learnadroid.myfirstapp.actor.RoomType;
+import com.learnadroid.myfirstapp.actor.roomType;
 import com.learnadroid.myfirstapp.dangnhap.AccountManager;
 import com.learnadroid.myfirstapp.database.ConnectionClass;
-import com.learnadroid.myfirstapp.home.MainActivity;
 import com.learnadroid.myfirstapp.roomtype.roomResult;
 import com.learnadroid.myfirstapp.roomtype.roomTypeResult;
 
@@ -51,9 +50,8 @@ public class DsKhachsanDadat extends Fragment {
     @Override
     public void onActivityCreated(@Nullable Bundle savedInstanceState) {
         super.onActivityCreated(savedInstanceState);
-        ((MainActivity) requireActivity()).getSupportActionBar().hide();
-        connectionClass = new ConnectionClass();
 
+        connectionClass = new ConnectionClass();
         progressDialog = new ProgressDialog(getContext());
 
         customerId = AccountManager.customerId;
@@ -72,8 +70,8 @@ public class DsKhachsanDadat extends Fragment {
                 Intent intent = new Intent(getContext(), orderDetail.class);
                 AccountManager.roomId = tr.getRoomId();
                 AccountManager.hotelId = tr.getHotelId();
-                startActivity(intent);
                 progressDialog.dismiss();
+                startActivity(intent);
             }
         });
     }

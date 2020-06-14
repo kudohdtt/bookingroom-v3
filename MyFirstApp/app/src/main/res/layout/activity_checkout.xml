@@ -10,7 +10,7 @@
         android:id="@+id/frameLayoutCheckout"
         android:layout_width="412dp"
         android:layout_height="150dp"
-        android:foreground="#CAFFA726"
+        android:foreground="#CAFFA115"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" >
@@ -19,8 +19,8 @@
 
     <DatePicker
         android:id="@+id/CheckOutDate"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
+        android:layout_width="350dp"
+        android:layout_height="450dp"
         android:layout_marginTop="110dp"
         android:background="@drawable/bogoclich"
         app:layout_constraintEnd_toEndOf="parent"
@@ -53,69 +53,4 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent" />
 
-    <ImageButton
-        android:id="@+id/imageButtonFindeCO"
-        android:layout_width="60dp"
-        android:layout_height="60dp"
-        android:layout_marginStart="40dp"
-        android:layout_marginBottom="14dp"
-        android:background="@null"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:srcCompat="@drawable/ic_findroom4_foreground" />
-
-    <ImageButton
-        android:id="@+id/imageButtonOrderCO"
-        android:layout_width="60dp"
-        android:layout_height="60dp"
-        android:layout_marginBottom="19dp"
-        android:background="@null"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toStartOf="@+id/imageButtonAccountCI"
-        app:layout_constraintStart_toEndOf="@+id/imageButtonFindeCO"
-        app:srcCompat="@drawable/ic_order_foreground" />
-
-    <ImageButton
-        android:id="@+id/imageButtonAccountCI"
-        android:layout_width="60dp"
-        android:layout_height="60dp"
-        android:layout_marginEnd="40dp"
-        android:layout_marginBottom="14dp"
-        android:background="@null"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:srcCompat="@drawable/ic_profile_foreground" />
-
-    <TextView
-        android:id="@+id/textViewFindRoomCO"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="43dp"
-        android:layout_marginBottom="2dp"
-        android:text="@string/t_m_ki_m"
-        android:textAlignment="center"
-        android:textColor="#1BA3F3"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintStart_toStartOf="parent" />
-
-    <TextView
-        android:id="@+id/textViewDaDatCI"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="@string/t"
-        android:textAlignment="center"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toStartOf="@+id/textViewAccountCI"
-        app:layout_constraintStart_toEndOf="@+id/textViewFindRoomCO" />
-
-    <TextView
-        android:id="@+id/textViewAccountCI"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginEnd="38dp"
-        android:layout_marginBottom="2dp"
-        android:text="@string/t_i_kho_n"
-        android:textAlignment="center"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent" />
 </androidx.constraintlayout.widget.ConstraintLayout>

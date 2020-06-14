@@ -25,7 +25,7 @@ import com.learnadroid.myfirstapp.dangnhap.AccountManager;
 
 public class Profile extends Fragment {
 
-    EditText fulName;
+    EditText fullName;
     EditText userName;
     EditText sex;
     EditText birthDay;
@@ -86,7 +86,7 @@ public class Profile extends Fragment {
 
     private void ReferenceInit(){
 
-        fulName = getView().findViewById(R.id.txtten);
+        fullName = getView().findViewById(R.id.txtten);
         userName =  getView().findViewById(R.id.txttendn);
         sex =  getView().findViewById(R.id.txtgioitinh);
         birthDay =  getView().findViewById(R.id.txtngaysin);
@@ -96,7 +96,7 @@ public class Profile extends Fragment {
     }
 
     private void SetDataForTextViews(){
-        fulName.setText(AccountManager.getInstance().user.getFullName());
+        fullName.setText(AccountManager.getInstance().user.getFullName());
         userName.setText(AccountManager.getInstance().user.getUserName());
         sex.setText(AccountManager.getInstance().user.getSex());
         birthDay.setText(AccountManager.getInstance().user.getBirthDay());

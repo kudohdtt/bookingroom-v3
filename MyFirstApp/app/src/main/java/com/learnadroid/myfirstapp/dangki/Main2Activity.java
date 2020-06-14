@@ -82,6 +82,8 @@ public class Main2Activity extends AppCompatActivity {
             public void onClick(View v) {
                 String keyCf2 = cf.getText().toString().trim();
                 if(keyCf2.equals(Integer.toString(keyCf))){
+                    AccountManager.customerId = newId;
+                    AccountManager.userId = newId;
                     Intent mh3 = new Intent(Main2Activity.this, Main3Activity.class);
                     startActivity(mh3);
                 } else{
@@ -121,7 +123,6 @@ public class Main2Activity extends AppCompatActivity {
 
         //Executing sendmail to send email
         sm.execute();
-        Toast.makeText(getBaseContext(),"Email has been sent",Toast.LENGTH_LONG).show();
     }
 
     public class DeleteUser extends AsyncTask<String, String, String> {
