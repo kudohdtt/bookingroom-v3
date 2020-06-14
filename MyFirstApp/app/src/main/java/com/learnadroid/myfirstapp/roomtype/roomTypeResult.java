@@ -15,7 +15,7 @@ import android.widget.Toast;
 import androidx.annotation.RequiresApi;
 import androidx.appcompat.app.AppCompatActivity;
 
-import com.learnadroid.myfirstapp.actor.roomType;
+import com.learnadroid.myfirstapp.actor.RoomType;
 import com.learnadroid.myfirstapp.dangnhap.AccountManager;
 import com.learnadroid.myfirstapp.database.ConnectionClass;
 import com.learnadroid.myfirstapp.R;
@@ -29,11 +29,11 @@ import java.util.ArrayList;
 public class roomTypeResult extends AppCompatActivity {
 
     ListView listViewLoaiphong;
-    ArrayList<roomType> arrayloaiphong;
+    ArrayList<RoomType> arrayloaiphong;
     roomTypeAdapter adapter;
     ProgressDialog progressDialog;
     ConnectionClass connectionClass;
-    roomType typeRoom;
+    RoomType typeRoom;
     Button back;
     private int hotelId;
     private String checkindate;
@@ -80,7 +80,7 @@ public class roomTypeResult extends AppCompatActivity {
         listViewLoaiphong.setOnItemClickListener(new AdapterView.OnItemClickListener(){
             @Override
             public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
-                roomType tr = arrayloaiphong.get(position);
+                RoomType tr = arrayloaiphong.get(position);
                 Intent intent = new Intent(roomTypeResult.this, roomResult.class);
                 AccountManager.roomtypeId = tr.getId();
                 startActivity(intent);
@@ -133,7 +133,7 @@ public class roomTypeResult extends AppCompatActivity {
                             float pricesale = price - sale*price;
                             String image = rs.getString(8);
                             int id_image = getResources().getIdentifier(image,"drawable",getPackageName());
-                            typeRoom = new roomType(id,name,bedType,"Diện tích : "+acreage+" m2",description,"Giá: "+price+"đ","Khuyến mại "+sale*100+"% : "+pricesale+"đ", id_image);
+                            typeRoom = new RoomType(id,name,bedType,"Diện tích : "+acreage+" m2",description,"Giá: "+price+"đ","Khuyến mại "+sale*100+"% : "+pricesale+"đ", id_image);
                             arrayloaiphong.add(typeRoom);
                         }
                     } catch (Exception e) {

@@ -19,6 +19,7 @@ import com.learnadroid.myfirstapp.actor.Hotel;
 import com.learnadroid.myfirstapp.dangnhap.AccountManager;
 import com.learnadroid.myfirstapp.database.ConnectionClass;
 import com.learnadroid.myfirstapp.R;
+import com.learnadroid.myfirstapp.home.MainActivity;
 import com.learnadroid.myfirstapp.roomtype.roomTypeResult;
 
 
@@ -91,7 +92,7 @@ public class hotelResult extends AppCompatActivity {
         back.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent intent = new Intent(hotelResult.this, timkiem.class);
+                Intent intent = new Intent(hotelResult.this, MainActivity.class);
                 startActivity(intent);
             }
         });

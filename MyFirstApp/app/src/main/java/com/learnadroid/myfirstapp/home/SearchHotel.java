@@ -71,6 +71,7 @@ public class SearchHotel extends Fragment {
     @Override
     public void onActivityCreated(@Nullable Bundle savedInstanceState) {
         super.onActivityCreated(savedInstanceState);
+        ((MainActivity) requireActivity()).getSupportActionBar().hide();
         checkindate = getView().findViewById(R.id.txtCIdate);
         checkoutdate = getView().findViewById(R.id.txtCOdate);
         hotel = getView().findViewById(R.id.edtCity);

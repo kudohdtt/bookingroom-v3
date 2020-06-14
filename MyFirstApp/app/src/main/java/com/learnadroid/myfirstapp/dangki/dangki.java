@@ -35,6 +35,7 @@ public class dangki extends AppCompatActivity {
 
     ConnectionClass connectionClass;
     private Button btTieptuc;
+    private Button btBack;
     private EditText txtMail;
     private EditText txtPass;
     private TextView txtValidate;
@@ -88,11 +89,19 @@ public class dangki extends AppCompatActivity {
         rePass = findViewById(R.id.txtRepass);
         notpass = findViewById(R.id.notpass);
         checkBox = findViewById(R.id.check);
-
+        btBack = findViewById(R.id.btQuaylai);
 
         connectionClass = new ConnectionClass();
 
 
+        btBack.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(dangki.this, MainActivity.class);
+
+                startActivity(intent);
+            }
+        });
 
         btTieptuc.setOnClickListener(new View.OnClickListener() {
             @Override

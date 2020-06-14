@@ -17,7 +17,6 @@ import androidx.appcompat.app.AppCompatActivity;
 import com.learnadroid.myfirstapp.database.ConnectionClass;
 import com.learnadroid.myfirstapp.R;
 import com.learnadroid.myfirstapp.dangki.dangki;
-import com.learnadroid.myfirstapp.timkiemkhachsan.timkiem;
 
 import java.sql.Connection;
 import java.sql.ResultSet;

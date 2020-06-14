@@ -15,7 +15,6 @@ import android.os.Bundle;
 import android.view.Gravity;
 import android.view.View;
 import android.widget.Button;
-import android.widget.ImageButton;
 import android.widget.SearchView;
 import android.widget.Toast;
 
@@ -40,7 +39,6 @@ import com.learnadroid.myfirstapp.actor.Hotel;
 import com.learnadroid.myfirstapp.dangnhap.AccountManager;
 import com.learnadroid.myfirstapp.database.ConnectionClass;
 import com.learnadroid.myfirstapp.home.MainActivity;
-import com.learnadroid.myfirstapp.timkiemkhachsan.timkiem;
 import com.learnadroid.myfirstapp.timphong.timphong;
 
 import java.sql.Connection;

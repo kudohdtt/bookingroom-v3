@@ -14,7 +14,7 @@ import android.widget.Toast;
 import com.learnadroid.myfirstapp.R;
 import com.learnadroid.myfirstapp.dangnhap.AccountManager;
 import com.learnadroid.myfirstapp.database.ConnectionClass;
-import com.learnadroid.myfirstapp.timkiemkhachsan.timkiem;
+import com.learnadroid.myfirstapp.home.MainActivity;
 
 import java.sql.Connection;
 import java.sql.ResultSet;
@@ -51,7 +51,7 @@ public class comfim extends AppCompatActivity {
         start.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent intent = new Intent(comfim.this, timkiem.class);
+                Intent intent = new Intent(comfim.this, MainActivity.class);
                 startActivity(intent);
             }
         });

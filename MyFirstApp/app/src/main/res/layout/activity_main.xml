@@ -104,6 +104,7 @@
             android:layout_marginRight="20dp"
             android:layout_marginTop="7dp"
             android:layout_marginBottom="25dp"
+            android:inputType="textPassword"
             android:background="@drawable/botronedittext"
             android:hint="Mật khẩu"
             android:paddingStart="10dp"
