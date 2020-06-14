@@ -18,6 +18,7 @@ import com.learnadroid.myfirstapp.dangki.Main3Activity;
 import com.learnadroid.myfirstapp.dangki.dangki;
 import com.learnadroid.myfirstapp.dangnhap.AccountManager;
 import com.learnadroid.myfirstapp.gmail.SendMail;
+import com.learnadroid.myfirstapp.home.MainActivity;
 
 import java.util.Random;
 
@@ -82,7 +83,7 @@ public class maXacNhan extends AppCompatActivity {
         huy.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent intent = new Intent(maXacNhan.this, timkiem.class);
+                Intent intent = new Intent(maXacNhan.this, MainActivity.class);
                 startActivity(intent);
             }
         });

@@ -17,13 +17,12 @@ import androidx.appcompat.app.AppCompatActivity;
 import com.learnadroid.myfirstapp.database.ConnectionClass;
 import com.learnadroid.myfirstapp.R;
 import com.learnadroid.myfirstapp.dangki.dangki;
-import com.learnadroid.myfirstapp.timkiemkhachsan.timkiem;
 
 import java.sql.Connection;
 import java.sql.ResultSet;
 import java.sql.Statement;
 
-public class MainActivity extends AppCompatActivity {
+public class Login extends AppCompatActivity {
 
     private TextView linkdangki;
     private Button dangnhap;
@@ -63,7 +62,7 @@ public class MainActivity extends AppCompatActivity {
         linkdangki.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                startActivity(new Intent(MainActivity.this, dangki.class));
+                startActivity(new Intent(Login.this, dangki.class));
             }
         });
         //dangnhap
@@ -81,7 +80,7 @@ public class MainActivity extends AppCompatActivity {
 
             String un = username.getText().toString();
             String pass = password.getText().toString();
-            String z = "";
+            String z = "Login successfully ! Mãi bên nhau bạn nhé";
             boolean isSuccess = false;
 
             @Override
@@ -126,13 +125,13 @@ public class MainActivity extends AppCompatActivity {
                                     int id = resultQueryCustomer.getInt(1);
                                     String email = resultQueryCustomer.getString(3);
                                     AccountManager.gmail = email;
-                                    String fulName = resultQueryCustomer.getString(2);
+                                    String fullName = resultQueryCustomer.getString(2);
                                     String numberPhone = resultQueryCustomer.getString(4);
                                     String sex = "Male";
                                     String birthDay = "1/1/1999";
 
-                                    AccountManager.getInstance().InitAccount(id, email, fulName, numberPhone, sex, birthDay, userName, passWord);
-                                    z = resultQueryCustomer.getInt(1) + " " + resultQueryCustomer.getString(2) + " " + resultQueryCustomer.getString(3);
+                                    AccountManager.getInstance().InitAccount(id, email, fullName, numberPhone, sex, birthDay, userName, passWord);
+
                                 }else {
                                     z = "queryFail";
                                 }
@@ -155,7 +154,7 @@ public class MainActivity extends AppCompatActivity {
                 if (isSuccess) {
                     progressDialog.hide();
                     progressDialog.dismiss();
-                    Intent intent = new Intent(MainActivity.this, com.learnadroid.myfirstapp.home.MainActivity.class);
+                    Intent intent = new Intent(Login.this, com.learnadroid.myfirstapp.home.MainActivity.class);
                     startActivity(intent);
                 }
                 progressDialog.hide();
