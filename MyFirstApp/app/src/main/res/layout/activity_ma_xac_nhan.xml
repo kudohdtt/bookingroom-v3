@@ -36,15 +36,15 @@
 
     <TextView
         android:id="@+id/text"
-        android:layout_width="417dp"
-        android:layout_height="500dp"
+        android:layout_width="415dp"
+        android:layout_height="550dp"
         android:background="#CAFFA726"
-        app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintLeft_toLeftOf="parent"
         app:layout_constraintRight_toRightOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/textView"
+        app:layout_constraintTop_toTopOf="parent"
+        android:layout_marginTop="108dp"
         app:layout_constraintVertical_bias="0.450" />
 
     <Button
@@ -70,7 +70,7 @@
         android:id="@+id/btHuy"
         android:layout_width="90dp"
         android:layout_height="39dp"
-        android:layout_marginEnd="288dp"
+        android:layout_marginEnd="292dp"   
         android:layout_marginRight="28dp"
         android:background="@drawable/cancelbuton"
         android:text="Hủy"
@@ -104,7 +104,7 @@
         android:id="@+id/txtKhachsan"
         android:layout_width="252dp"
         android:layout_height="107dp"
-        android:background="#F1CE66"
+        android:background="@drawable/botronedittext"
         android:gravity="center"
         android:inputType="number"
         android:textSize="30sp"
