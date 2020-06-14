@@ -4,6 +4,7 @@ import androidx.annotation.Nullable;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.fragment.app.Fragment;
 
+import android.content.Intent;
 import android.graphics.Bitmap;
 import android.graphics.BitmapFactory;
 import android.os.Bundle;
@@ -13,10 +14,12 @@ import android.view.MenuInflater;
 import android.view.MenuItem;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.Button;
 import android.widget.EditText;
 import android.widget.ImageView;
 import android.widget.Toast;
 
+import com.learnadroid.myfirstapp.dangnhap.Login;
 import com.learnadroid.myfirstapp.home.ImageConverter;
 import com.learnadroid.myfirstapp.R;
 import com.learnadroid.myfirstapp.dangnhap.AccountManager;
@@ -29,6 +32,7 @@ public class Profile extends Fragment {
     EditText birthDay;
     EditText numberPhone;
     EditText email;
+    Button btLogOut;
 
 
 //    @Override
@@ -57,7 +61,7 @@ public class Profile extends Fragment {
     @Override
     public void onActivityCreated(@Nullable Bundle savedInstanceState) {
         super.onActivityCreated(savedInstanceState);
-
+        ((MainActivity) requireActivity()).getSupportActionBar().hide();
         Bitmap bitmap = BitmapFactory.decodeResource(this.getResources(), R.drawable.chandung);
         Bitmap circularBitmap = ImageConverter.getRoundedCornerBitmap(bitmap, 100);
 
@@ -89,6 +93,7 @@ public class Profile extends Fragment {
         birthDay =  getView().findViewById(R.id.txtngaysin);
         numberPhone =  getView().findViewById(R.id.txtsodienthoai);
         email =  getView().findViewById(R.id.txtemail);
+        btLogOut = getView().findViewById(R.id.btDangxuat);
     }
 
     private void SetDataForTextViews(){
@@ -98,6 +103,14 @@ public class Profile extends Fragment {
         birthDay.setText(AccountManager.getInstance().user.getBirthDay());
         numberPhone.setText(AccountManager.getInstance().user.getNumberPhone());
         email.setText(AccountManager.getInstance().user.getEmail());
+
+        btLogOut.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent intent = new Intent(getActivity(), Login.class);
+                startActivity(intent);
+            }
+        });
     }
 
 }
