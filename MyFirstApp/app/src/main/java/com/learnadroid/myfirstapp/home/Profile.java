@@ -19,6 +19,7 @@ import android.widget.EditText;
 import android.widget.ImageView;
 import android.widget.Toast;
 
+import com.learnadroid.myfirstapp.dangnhap.Login;
 import com.learnadroid.myfirstapp.home.ImageConverter;
 import com.learnadroid.myfirstapp.R;
 import com.learnadroid.myfirstapp.dangnhap.AccountManager;
@@ -106,7 +107,7 @@ public class Profile extends Fragment {
         btLogOut.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Intent intent = new Intent(getActivity(), com.learnadroid.myfirstapp.dangnhap.MainActivity.class);
+                Intent intent = new Intent(getActivity(), Login.class);
                 startActivity(intent);
             }
         });
