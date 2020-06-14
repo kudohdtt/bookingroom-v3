@@ -88,11 +88,9 @@ public class orderDetail extends AppCompatActivity {
         gia = findViewById(R.id.textView10);
         key = findViewById(R.id.textView18);
 
-
         customerId = AccountManager.customerId;
         hotelId = AccountManager.hotelId;
         keyId = AccountManager.roomId;
-
 
         anhxa ax = new anhxa();
         ax.execute();
@@ -101,6 +99,7 @@ public class orderDetail extends AppCompatActivity {
         back.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
+                progressDialog.dismiss();
                 startActivity(new Intent(orderDetail.this, DsKhachsanDadat.class));
             }
         });
@@ -111,6 +110,8 @@ public class orderDetail extends AppCompatActivity {
                 if(state.trim().equals("wait for checkin")){
                     huyphong hp = new huyphong();
                     hp.execute();
+                    progressDialog.dismiss();
+                    startActivity(new Intent(orderDetail.this, DsKhachsanDadat.class));
                 }else {
                     Toast.makeText(getBaseContext(), "Room reservation has expired!", Toast.LENGTH_LONG).show();
                 }

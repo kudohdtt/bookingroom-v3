@@ -71,9 +71,6 @@ public class roomTypeResult extends AppCompatActivity {
         //lấy thông tin id_hotel
         hotelId = AccountManager.hotelId;
 
-//        Toast.makeText(getApplicationContext(), "hotel ID: " + hotelId, Toast.LENGTH_LONG).show();
-//        Toast.makeText(getApplicationContext(), "checkindate: " + checkindate, Toast.LENGTH_LONG).show();
-
         Anhxa ax = new Anhxa();
         ax.execute();
 
@@ -91,6 +88,7 @@ public class roomTypeResult extends AppCompatActivity {
         back.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
+                progressDialog.dismiss();
                 Intent intent = new Intent(roomTypeResult.this, hotelResult.class);
                 startActivity(intent);
             }

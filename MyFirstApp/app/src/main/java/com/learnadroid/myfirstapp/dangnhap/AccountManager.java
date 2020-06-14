@@ -17,6 +17,7 @@ public class AccountManager {
     public static String gmail="";
     public static int bookingId;
     public static int serviceId;
+    public static int newId;
 
     public static AccountManager getInstance() {
         if (instance == null) {

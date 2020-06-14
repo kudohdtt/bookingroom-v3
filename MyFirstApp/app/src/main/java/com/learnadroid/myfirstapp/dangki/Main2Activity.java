@@ -15,6 +15,7 @@ import androidx.annotation.RequiresApi;
 import androidx.appcompat.app.AppCompatActivity;
 
 import com.learnadroid.myfirstapp.R;
+import com.learnadroid.myfirstapp.dangnhap.AccountManager;
 import com.learnadroid.myfirstapp.database.ConnectionClass;
 import com.learnadroid.myfirstapp.gmail.SendMail;
 
@@ -39,11 +40,11 @@ public class Main2Activity extends AppCompatActivity {
     Button huy;
     private String gmail;
     private int keyCf;
-    ProgressDialog progressDialog;
+
     ConnectionClass connectionClass;
     private TextView note;
     private EditText cf;
-    private String newId;
+    private int newId;
 
     @RequiresApi(api = Build.VERSION_CODES.M)
     @Override
@@ -63,18 +64,16 @@ public class Main2Activity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main2);
         btTieptuc2 = (Button) findViewById(R.id.btTieptuc2);
-        progressDialog = new ProgressDialog(this);
+
         connectionClass = new ConnectionClass();
         bt1 = (Button) findViewById(R.id.bt1);
         note = findViewById(R.id.textView2);
         cf = findViewById(R.id.txtKhachsan);
         huy = findViewById(R.id.btHuy);
 
-        Intent intent1 = new Intent();
-        gmail = intent1.getStringExtra("gmail");
-        gmail = "phamhung99.ltv@gmail.com";
-        newId = intent1.getStringExtra("newId");
-        newId = "8";
+        gmail = AccountManager.gmail;
+        newId = AccountManager.newId;
+        newId = 8;
         note.setText("Chúng tôi vừa gửi mã xác nhận bảo mật tới email " +gmail);
         sendEmail();
 
@@ -83,6 +82,8 @@ public class Main2Activity extends AppCompatActivity {
             public void onClick(View v) {
                 String keyCf2 = cf.getText().toString().trim();
                 if(keyCf2.equals(Integer.toString(keyCf))){
+                    AccountManager.customerId = newId;
+                    AccountManager.userId = newId;
                     Intent mh3 = new Intent(Main2Activity.this, Main3Activity.class);
                     startActivity(mh3);
                 } else{
@@ -115,14 +116,13 @@ public class Main2Activity extends AppCompatActivity {
         keyCf = rd.nextInt((9999-10000 +1)+10000);
         //Getting content for email
         String subject = "[COMFIM YOUR BOOIKNGROOM ACCOUNT]";
-        String message = Integer.toString(keyCf);
+        String message = "Mã xác thực tài khoản của bạn là : " +keyCf;
 
         //Creating SendMail object
         SendMail sm = new SendMail(this, gmail, subject, message);
 
         //Executing sendmail to send email
         sm.execute();
-        Toast.makeText(getBaseContext(),"Email has been sent",Toast.LENGTH_LONG).show();
     }
 
     public class DeleteUser extends AsyncTask<String, String, String> {
@@ -132,8 +132,6 @@ public class Main2Activity extends AppCompatActivity {
 
         @Override
         protected void onPreExecute() {
-            progressDialog.setMessage("Loading...");
-            progressDialog.show();
         }
 
         @Override
@@ -176,8 +174,6 @@ public class Main2Activity extends AppCompatActivity {
         @Override
         protected void onPostExecute(String s) {
             Toast.makeText(getBaseContext(), "" + z, Toast.LENGTH_LONG).show();
-            progressDialog.hide();
-
         }
     }
 }

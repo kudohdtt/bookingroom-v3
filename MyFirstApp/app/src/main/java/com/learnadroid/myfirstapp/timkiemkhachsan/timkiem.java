@@ -142,7 +142,7 @@ public class timkiem extends AppCompatActivity {
             @Override
             public void onClick(View v) {
 
-                if(!isValidCity && !isValidCIdate && !isValidCodate && !isValidAdults && !isValidChildrent && txt1.trim().equals("") && txt2.trim().equals("") && txt3.trim().equals("") && txt4.trim().equals("")){
+                if(!isValidCity || !isValidCIdate || !isValidCodate || !isValidAdults || !isValidChildrent || txt1.trim().equals("") || txt2.trim().equals("") || txt3.trim().equals("") || txt4.trim().equals("")){
                     Toast.makeText(getBaseContext(), "Please check all field again !", Toast.LENGTH_LONG).show();
                 }else {
                     Intent intent = new Intent(timkiem.this, hotelResult.class);

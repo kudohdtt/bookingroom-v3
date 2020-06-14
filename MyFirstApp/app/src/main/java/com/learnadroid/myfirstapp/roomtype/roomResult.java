@@ -92,9 +92,7 @@ public class roomResult extends AppCompatActivity {
         cindate.setText("Check in : " + checkindate+"/2020");
         checkoutdate = AccountManager.checkoutdate;
         codate.setText("Check out : " + checkoutdate + "/2020");
-//        Toast.makeText(getApplicationContext(), "roomtype ID: " + roomtypeId, Toast.LENGTH_LONG).show();
-//        Toast.makeText(getApplicationContext(), "checkindate: " + checkindate, Toast.LENGTH_LONG).show();
-//        Toast.makeText(getApplicationContext(), "checkoutdate: " + checkoutdate, Toast.LENGTH_LONG).show();
+
         anhxa ax = new anhxa();
         ax.execute();
 
@@ -102,6 +100,7 @@ public class roomResult extends AppCompatActivity {
         back.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
+                progressDialog.dismiss();
                 startActivity(new Intent(roomResult.this, roomTypeResult.class));
             }
         });
@@ -110,6 +109,7 @@ public class roomResult extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 Intent intent = new Intent(roomResult.this, maXacNhan.class);
+                progressDialog.dismiss();
                 startActivity(intent);
             }
         });
