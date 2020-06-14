@@ -105,7 +105,7 @@ public class timphong extends AppCompatActivity {
         search.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                if(!isValidCIdate && !isValidCodate && !isValidAdults && !isValidChildrent && checkoutdate.getText().toString().trim().equals("") && checkindate.getText().toString().trim().equals("")
+                if(!isValidCIdate || !isValidCodate || !isValidAdults || !isValidChildrent || checkoutdate.getText().toString().trim().equals("") || checkindate.getText().toString().trim().equals("")
                         && editAdult.getText().toString().trim().equals("")){
                     Toast.makeText(getBaseContext(), "Please check all field again !", Toast.LENGTH_LONG).show();
                 }else {

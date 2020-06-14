@@ -19,6 +19,7 @@ import android.widget.Toast;
 import androidx.annotation.RequiresApi;
 import androidx.appcompat.app.AppCompatActivity;
 
+import com.learnadroid.myfirstapp.dangnhap.AccountManager;
 import com.learnadroid.myfirstapp.dangnhap.MainActivity;
 import com.learnadroid.myfirstapp.database.ConnectionClass;
 import com.learnadroid.myfirstapp.R;
@@ -46,7 +47,7 @@ public class dangki extends AppCompatActivity {
     private EditText txtPhone;
     private EditText rePass;
     private CheckBox checkBox;
-    private String newId;
+    private int newId;
     //Validation
     private Boolean isValidMail = false;
     private Boolean isValidpPass = false;
@@ -89,11 +90,8 @@ public class dangki extends AppCompatActivity {
         notpass = findViewById(R.id.notpass);
         checkBox = findViewById(R.id.check);
 
-
         connectionClass = new ConnectionClass();
-
-
-
+        //set su kien
         btTieptuc.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -101,6 +99,7 @@ public class dangki extends AppCompatActivity {
                 doregister.execute();
             }
         });
+        //kiem tra điều kiện - form password
         txtPass.addTextChangedListener(new TextWatcher() {
             @Override
             public void beforeTextChanged(CharSequence s, int start, int count, int after) {
@@ -119,7 +118,7 @@ public class dangki extends AppCompatActivity {
             public void afterTextChanged(Editable s) {
             }
         });
-
+        //Kiểm tra sđt
         txtPhone.addTextChangedListener(new TextWatcher() {
             @Override
             public void beforeTextChanged(CharSequence s, int start, int count, int after) {
@@ -139,7 +138,7 @@ public class dangki extends AppCompatActivity {
             }
         });
 
-        //validation
+        //Kiểm tra email
         txtMail.addTextChangedListener(new TextWatcher() {
             @Override
             public void beforeTextChanged(CharSequence s, int start, int count, int after) {
@@ -162,7 +161,7 @@ public class dangki extends AppCompatActivity {
 
             }
         });
-
+        //xác nhận lại password
         rePass.addTextChangedListener(new TextWatcher() {
             @Override
             public void beforeTextChanged(CharSequence s, int start, int count, int after) {
@@ -187,7 +186,7 @@ public class dangki extends AppCompatActivity {
             }
         });
     }
-
+    // Đăng kí
     public class Doregister extends AsyncTask<String, String, String> {
 
         final String name = txtHoten.getText().toString();
@@ -207,7 +206,7 @@ public class dangki extends AppCompatActivity {
 
         @Override
         protected String doInBackground(String... params) {
-
+            //Kiểm tra các trường có bị để trống và phù hợp chưa
             if (!isPass || !isPhone || !isValidMail || !isValidpPass || name.trim().equals("") || email.trim().equals("") || phone.trim().equals("") ||
                     username.trim().equals("") || password.trim().equals("") || rePass.getText().toString().trim().equals("") || !checkBox.isChecked()) {
 
@@ -231,7 +230,7 @@ public class dangki extends AppCompatActivity {
                             id += 1;
                         }
 
-                        newId = Integer.toString(id);
+                        newId = id;
 
                         String query1 = "insert into customer values('" + newId + "','" + name + "','" + email + "','" + phone + "')";
                         String query2 = "insert into user values('" + newId + "','" + username + "','" + password + "','" + newId + "')";
@@ -264,14 +263,13 @@ public class dangki extends AppCompatActivity {
 
         @Override
         protected void onPostExecute(String s) {
-            Toast.makeText(getBaseContext(), "id:" + newId +"name : "+ name + "email:" +email +"phone : "+phone +"username :"+username +"password :" +password , Toast.LENGTH_LONG).show();
+
                 Toast.makeText(getBaseContext(), "" + z, Toast.LENGTH_LONG).show();
 
                 if (isSuccess) {
+                    AccountManager.newId = newId;
+                    AccountManager.gmail = txtMail.getText().toString();
                     Intent intent = new Intent(dangki.this, Main2Activity.class);
-                    intent.putExtra("newId",newId);
-                    intent.putExtra("gmail",email);
-
                     startActivity(intent);
                 }
 

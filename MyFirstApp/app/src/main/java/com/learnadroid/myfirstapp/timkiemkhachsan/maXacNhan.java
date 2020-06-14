@@ -100,6 +100,5 @@ public class maXacNhan extends AppCompatActivity {
 
         //Executing sendmail to send email
         sm.execute();
-        Toast.makeText(getBaseContext(),"Email has been sent",Toast.LENGTH_LONG).show();
     }
 }

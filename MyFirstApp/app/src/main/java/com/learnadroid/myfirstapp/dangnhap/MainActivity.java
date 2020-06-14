@@ -32,7 +32,7 @@ public class MainActivity extends AppCompatActivity {
 
     ProgressDialog progressDialog;
     ConnectionClass connectionClass;
-
+    //Full screen
     @RequiresApi(api = Build.VERSION_CODES.M)
     @Override
     protected void onResume() {
@@ -101,6 +101,7 @@ public class MainActivity extends AppCompatActivity {
                         if (con == null) {
                             z = "Please check your internet connection";
                         } else {
+                            //Kiểm tra tài khoản có trong db ko
                             String queryUser = " select * from user where username='" + un + "'and password = '" + pass + "'";
                             Statement stmt = con.createStatement();
                             ResultSet resultQueryUser = stmt.executeQuery(queryUser);
@@ -113,6 +114,7 @@ public class MainActivity extends AppCompatActivity {
                                 //z = "Login successfull - Mãi bên nhau bạn nhé!!";
 
                                 int idCustomer = resultQueryUser.getInt(4);
+                                //Lưu thông tin id
                                 AccountManager.customerId = idCustomer;
                                 AccountManager.userId = idCustomer;
 
@@ -150,9 +152,9 @@ public class MainActivity extends AppCompatActivity {
             @Override
             protected void onPostExecute(String s) {
                 Toast.makeText(getBaseContext(), "" + z, Toast.LENGTH_LONG).show();
-                //fix loi
-
                 if (isSuccess) {
+                    progressDialog.hide();
+                    progressDialog.dismiss();
                     Intent intent = new Intent(MainActivity.this, com.learnadroid.myfirstapp.home.MainActivity.class);
                     startActivity(intent);
                 }

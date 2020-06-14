@@ -32,7 +32,6 @@ public class PageAdapter extends FragmentPagerAdapter {
                 return new DsKhachsanDadat();
             case 2:
                 return new Profile();
-
             default:
                 return null;
         }
