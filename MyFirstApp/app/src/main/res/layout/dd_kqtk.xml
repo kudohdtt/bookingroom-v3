@@ -25,6 +25,7 @@
             android:layout_marginStart="2dp"
             android:layout_marginTop="0dp"
             android:fontFamily="sans-serif-medium"
+            android:textStyle="bold|italic"
             android:text="RealativeLayout"
             android:textColor="#1693A3"
             android:textSize="30dp" />

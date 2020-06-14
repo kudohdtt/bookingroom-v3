@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="utf-8"?>
 <shape xmlns:android="http://schemas.android.com/apk/res/android" android:shape="rectangle">
     <gradient
-        android:startColor="#f5b224"
-        android:endColor="#f5c255"
+        android:startColor="#E8BE64"
+        android:endColor="#F4B735"
         android:angle="90"/>
     <padding android:left="15dp"
         android:top="1dp"
@@ -10,5 +10,5 @@
         android:bottom="1dp" />
     <stroke
         android:width="1dp"
-        android:color="#f5c255" />
+        android:color="#ECBF61" />
 </shape>

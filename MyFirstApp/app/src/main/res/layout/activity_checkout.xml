@@ -35,7 +35,9 @@
         android:layout_marginTop="20dp"
         android:text="@string/check_out_date"
         android:textSize="30sp"
-        android:textStyle="bold"
+        android:fontFamily="serif"
+        android:textStyle="bold|italic"
+        android:textColor="#592A06"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
