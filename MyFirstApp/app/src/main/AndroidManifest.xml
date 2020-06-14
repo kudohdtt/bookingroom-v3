@@ -34,7 +34,9 @@
         <activity android:name=".timkiemkhachsan.checkout" />
         <activity android:name=".dangki.dangki"></activity>
         <activity android:name=".dangki.Main3Activity" />
-        <activity android:name=".dangki.Main2Activity"></activity>
+        <activity android:name=".dangki.Main2Activity">
+
+        </activity>
         <activity android:name=".dangnhap.MainActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />

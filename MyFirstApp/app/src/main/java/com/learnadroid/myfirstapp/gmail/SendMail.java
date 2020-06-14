@@ -70,10 +70,16 @@ public class SendMail extends AsyncTask<Void,Void,Void> {
         props.put("mail.smtp.socketFactory.port", "465");
         props.put("mail.smtp.socketFactory.class", "javax.net.ssl.SSLSocketFactory");
         props.put("mail.smtp.auth", "true");
-        props.put("mail.smtp.port", "465");
+        props.put("mail.smtp.port", "456");
+        props.put("mail.smtp.ssl.enable","true");
 
         //Creating a new session
-        Session session = Session.getInstance(props, new GMailAuthenticator(Config.EMAIL,Config.PASSWORD ));
+        Session session = Session.getInstance(props, new javax.mail.Authenticator() {
+            protected PasswordAuthentication getPasswordAuthentication() {
+                return new PasswordAuthentication(Config.EMAIL, Config.PASSWORD);
+            }
+        });
+        session.setDebug(true);
 
         try {
             //Creating MimeMessage object

@@ -32,7 +32,7 @@ public class dangki extends AppCompatActivity {
     public static final String emailPattern = "[a-zA-Z0-9._-]+@[a-zA-Z]+\\.+[a-z]{2,}";
     public static final String passPattern = "((?=.*\\d)(?=.*[a-z])(?=.*[A-Z])(?=.*[@#$%,.]).{6,20})";
     public static final String phonePattern ="(09|05)+([0-9]{8})\\b";
-    ProgressDialog progressDialog;
+
     ConnectionClass connectionClass;
     private Button btTieptuc;
     private EditText txtMail;
@@ -92,7 +92,7 @@ public class dangki extends AppCompatActivity {
 
         connectionClass = new ConnectionClass();
 
-        progressDialog = new ProgressDialog(this);
+
 
         btTieptuc.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -202,8 +202,7 @@ public class dangki extends AppCompatActivity {
 
         @Override
         protected void onPreExecute() {
-            progressDialog.setMessage("Loading...");
-            progressDialog.show();
+
         }
 
         @Override
@@ -267,14 +266,12 @@ public class dangki extends AppCompatActivity {
         protected void onPostExecute(String s) {
             Toast.makeText(getBaseContext(), "id:" + newId +"name : "+ name + "email:" +email +"phone : "+phone +"username :"+username +"password :" +password , Toast.LENGTH_LONG).show();
                 Toast.makeText(getBaseContext(), "" + z, Toast.LENGTH_LONG).show();
-                progressDialog.hide();
+
                 if (isSuccess) {
                     Intent intent = new Intent(dangki.this, Main2Activity.class);
                     intent.putExtra("newId",newId);
                     intent.putExtra("gmail",email);
-                    if(progressDialog != null){
-                        progressDialog.dismiss();
-                    }
+
                     startActivity(intent);
                 }
 
