@@ -8,28 +8,44 @@
     tools:context="com.learnadroid.myfirstapp.dangki.Main2Activity">
 
     <ImageView
-        android:id="@+id/imageView"
-        android:layout_width="409dp"
-        android:layout_height="92dp"
-        android:src="@drawable/anhla"
-        app:layout_constraintBottom_toBottomOf="parent"
+        android:id="@+id/imageView8"
+        android:layout_width="48dp"
+        android:layout_height="35dp"
+        android:layout_marginStart="72dp"
+        android:layout_marginTop="27dp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:srcCompat="@drawable/chiela"
+        tools:layout_editor_absoluteX="27dp" />
+
+    <TextView
+        android:id="@+id/textView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="23dp"
+        android:text="@string/booking_room"
+        android:textAppearance="@style/TextAppearance.AppCompat.Body1"
+        android:textColor="#FFA726"
+        android:textColorHighlight="#FFFFFF"
+        android:textSize="30sp"
+        android:textStyle="bold"
+        app:layout_constraintHorizontal_bias="0.57"
         app:layout_constraintLeft_toLeftOf="parent"
         app:layout_constraintRight_toRightOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.0" />
+        app:layout_constraintTop_toTopOf="parent" />
 
     <TextView
         android:id="@+id/text"
         android:layout_width="417dp"
-        android:layout_height="500dp"
-        android:background="#f3b329"
+        android:layout_height="570dp"
+        android:foreground="#CAFFA726"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintLeft_toLeftOf="parent"
         app:layout_constraintRight_toRightOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="@+id/imageView"
-        app:layout_constraintVertical_bias="0.702" />
+        app:layout_constraintTop_toBottomOf="@+id/textView"
+        app:layout_constraintVertical_bias="0.450" />
 
     <Button
         android:id="@+id/btTieptuc2"
@@ -76,7 +92,8 @@
         android:layout_width="223dp"
         android:layout_height="104dp"
         android:text="Chúng tôi vừa gửi mã xác nhận bảo mật tới email bạn cung cấp"
-        android:textStyle="italic"
+        android:textStyle="italic|bold"
+        android:textSize="15dp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.468"
@@ -88,7 +105,8 @@
         android:id="@+id/txtKhachsan"
         android:layout_width="252dp"
         android:layout_height="107dp"
-        android:background="#F1CE66"
+
+        android:background="@drawable/botronedittext"
         android:gravity="center"
         android:inputType="number"
         android:textSize="30sp"

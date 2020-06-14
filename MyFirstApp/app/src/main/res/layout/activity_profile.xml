@@ -19,7 +19,7 @@
         android:layout_alignParentBottom="true"
         android:layout_marginEnd="-3dp"
         android:layout_marginBottom="413dp"
-        android:background="#FFC107" />
+        android:foreground="#CAFFA726"/>
 
     <TextView
         android:layout_width="412dp"
@@ -28,16 +28,16 @@
         android:layout_alignParentBottom="true"
         android:layout_marginEnd="-1dp"
         android:layout_marginBottom="199dp"
-        android:background="#FFC107" />
+        android:foreground="#CAFFA726"/>
 
     <TextView
         android:layout_width="match_parent"
         android:layout_height="49dp"
         android:layout_alignParentEnd="true"
         android:layout_alignParentBottom="true"
-        android:layout_marginEnd="0dp"
+        android:layout_marginEnd="2dp"
         android:layout_marginBottom="130dp"
-        android:background="#FFC107" />
+        android:foreground="#CAFFA726" />
 
     <TextView
         android:id="@+id/txtnut"
