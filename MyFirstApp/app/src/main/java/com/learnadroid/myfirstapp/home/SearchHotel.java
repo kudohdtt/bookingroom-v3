@@ -1,7 +1,9 @@
 package com.learnadroid.myfirstapp.home;
 
+import android.app.Dialog;
 import android.content.Intent;
 import android.graphics.Color;
+import android.graphics.drawable.ColorDrawable;
 import android.os.Bundle;
 import android.text.Editable;
 import android.text.TextWatcher;
@@ -11,6 +13,7 @@ import android.view.MenuInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Button;
+import android.widget.DatePicker;
 import android.widget.EditText;
 import android.widget.ImageButton;
 import android.widget.TextView;
@@ -19,8 +22,6 @@ import android.widget.Toast;
 import com.learnadroid.myfirstapp.R;
 import com.learnadroid.myfirstapp.dangnhap.AccountManager;
 import com.learnadroid.myfirstapp.ggMap.GoogleMapAPI;
-import com.learnadroid.myfirstapp.timkiemkhachsan.checkin;
-import com.learnadroid.myfirstapp.timkiemkhachsan.checkout;
 import com.learnadroid.myfirstapp.timkiemkhachsan.hotelResult;
 
 import androidx.annotation.NonNull;
@@ -34,6 +35,9 @@ public class SearchHotel extends Fragment {
     private ImageButton ggmap;
     private EditText hotel;
     private Button search;
+
+    private Dialog checkInDialog;
+    private DatePicker datePicker;
 
     //loi
     private TextView ERcity;
@@ -79,6 +83,10 @@ public class SearchHotel extends Fragment {
         editChildrent = getView().findViewById(R.id.editChild);
         search = getView().findViewById(R.id.buttonSearch);
 
+        checkInDialog = new Dialog(getActivity());
+
+
+
         ERcity = getView().findViewById(R.id.ERcity);
         ERadults = getView().findViewById(R.id.ERadults);
         ERchildrent = getView().findViewById(R.id.ERchildrent);
@@ -93,18 +101,16 @@ public class SearchHotel extends Fragment {
         checkindate.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent intent = new Intent(getActivity(), checkin.class);
-                AccountManager.keyword = hotel.getText().toString();
-                startActivity(intent);
+
+                ShowPopupCalendar(checkindate);
             }
         });
 
         checkoutdate.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent intent = new Intent(getActivity(), checkout.class);
-                AccountManager.keyword = hotel.getText().toString();
-                startActivity(intent);
+
+                ShowPopupCalendar(checkoutdate);
             }
         });
 
@@ -117,11 +123,6 @@ public class SearchHotel extends Fragment {
         });
 
        //set cac truong tim kiem
-        String CIdate = AccountManager.checkindate;
-        checkindate.setText(CIdate);
-
-        String COdate = AccountManager.checkoutdate;
-        checkoutdate.setText(COdate);
 
         String hotelname = AccountManager.keyword;
         hotel.setText(hotelname);
@@ -197,6 +198,38 @@ public class SearchHotel extends Fragment {
             }
         });
 
+    }
+
+    private void ShowPopupCalendar(final EditText date) {
+        checkInDialog.setContentView(R.layout.popup_calendar);
+        TextView txtclose;
+        Button btnConfirm;
+
+        datePicker = checkInDialog.findViewById(R.id.checkInDate);
+
+        txtclose = checkInDialog.findViewById(R.id.txtclosePopup);
+
+        btnConfirm = checkInDialog.findViewById(R.id.btnConfirm);
+
+        txtclose.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                checkInDialog.dismiss();
+            }
+        });
+
+        btnConfirm.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                date.setText(datePicker.getDayOfMonth() + "/" + (datePicker.getMonth()+1));
+                checkInDialog.dismiss();
+            }
+        });
+
+
+
+        checkInDialog.getWindow().setBackgroundDrawable(new ColorDrawable(Color.TRANSPARENT));
+        checkInDialog.show();
     }
 
     @Override

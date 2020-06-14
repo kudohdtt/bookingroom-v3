@@ -98,7 +98,6 @@ public class GoogleMapAPI extends FragmentActivity implements OnMapReadyCallback
                         addressList = geocoder.getFromLocationName(location, 1);
                         if (addressList != null) {
                             Address address = addressList.get(0);
-                            Toast.makeText(getApplicationContext(), address.toString(), Toast.LENGTH_LONG).show();
                             LatLng latLng = new LatLng(address.getLatitude(), address.getLongitude());
                             mMap.addMarker(new MarkerOptions().position(latLng).title(location));
                             mMap.animateCamera(CameraUpdateFactory.newLatLngZoom(latLng, 20));
@@ -135,7 +134,6 @@ public class GoogleMapAPI extends FragmentActivity implements OnMapReadyCallback
 
 
     private void addHotel(ArrayList<Hotel> hotelList) {
-        Toast.makeText(getApplicationContext(), "AddHotelLocation", Toast.LENGTH_LONG).show();
         for (int i = 0; i < hotelList.size(); i++) {
             String location = hotelList.get(i).getLocation();
             if (location != null && !location.equals("")) {
@@ -161,7 +159,6 @@ public class GoogleMapAPI extends FragmentActivity implements OnMapReadyCallback
             @Override
             public void onInfoWindowClick (Marker marker){
                 int id = (int) marker.getTag();
-                Toast.makeText(getApplicationContext(), "" + id, Toast.LENGTH_LONG).show();
                 Intent intent = new Intent(GoogleMapAPI.this, timphong.class);
                 AccountManager.hotelId = id;
                 startActivity(intent);
@@ -179,7 +176,6 @@ public class GoogleMapAPI extends FragmentActivity implements OnMapReadyCallback
                         // Got last known location. In some rare situations this can be null.
                         if (location != null) {
                             currentLocation = location;
-                            Toast.makeText(getApplicationContext(), currentLocation.getLatitude() + " " + currentLocation.getLongitude(), Toast.LENGTH_LONG).show();
 
                             LatLng latLng = new LatLng(currentLocation.getLatitude(), currentLocation.getLongitude());
                             mMap.moveCamera(CameraUpdateFactory.newLatLngZoom(latLng, 18));
@@ -215,7 +211,6 @@ public class GoogleMapAPI extends FragmentActivity implements OnMapReadyCallback
 
         } else {
             ActivityCompat.requestPermissions(this, new String[]{Manifest.permission.ACCESS_FINE_LOCATION}, 1);
-            Toast.makeText(getApplicationContext(), "requestPermissions", Toast.LENGTH_LONG).show();
         }
 
     }
