@@ -18,7 +18,8 @@
             android:layout_width="66dp"
             android:layout_height="match_parent"
             app:srcCompat="@drawable/image_logo"
-            android:paddingRight="10dp"/>
+            android:paddingRight="8dp"
+            android:layout_marginStart="80dp"/>
 
         <TextView
             android:id="@+id/text_logo"
@@ -28,8 +29,12 @@
             android:layout_centerVertical="true"
             android:layout_toRightOf="@+id/image_logo"
             android:text="Booking room"
-            android:textColor="#f5b223"
-            android:textSize="40dp" />
+            android:textAppearance="@style/TextAppearance.AppCompat.Body1"
+            android:textColor="#FFA726"
+            android:textColorHighlight="#FFFFFF"
+            android:textSize="30sp"
+            android:textStyle="bold"
+            />
     </RelativeLayout>
 
     <LinearLayout

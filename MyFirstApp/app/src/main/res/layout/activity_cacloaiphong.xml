@@ -5,9 +5,10 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     tools:context=".roomtype.roomTypeResult"
-    android:background="#f3b329">
+    >
 
     <ListView
+        android:background="#CAFFA726"
         android:id="@+id/listLoaiphong"
         android:layout_width="match_parent"
         android:layout_height="667dp"
