@@ -38,5 +38,6 @@ dependencies {
     implementation files('libs\\additionnal.jar')
     implementation files('libs\\activation.jar')
     implementation 'com.google.android.material:material:1.1.0-alpha10'
+    implementation 'com.android.support:cardview-v7:21.0.+'
 
 }

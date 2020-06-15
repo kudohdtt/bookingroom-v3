@@ -4,7 +4,6 @@
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
     android:layout_margin="3dp"
-    android:background="@drawable/shadow_13520"
     xmlns:app="http://schemas.android.com/apk/res-auto">
 
     <RelativeLayout
@@ -76,20 +75,22 @@
             android:background="@drawable/bg_input_signin"
 
             />
+
         <ImageView
             android:id="@+id/imageView_2"
             android:layout_width="0dp"
             android:layout_height="75dp"
-            android:layout_marginEnd="3dp"
-            android:layout_alignParentEnd="true"
             android:layout_alignParentTop="true"
-            android:layout_toEndOf="@+id/imageView_1"
-            app:layout_constraintHorizontal_bias="0.0"
+            android:layout_alignParentEnd="true"
+            android:layout_marginStart="0dp"
+            android:layout_marginTop="-1dp"
+            android:layout_marginEnd="3dp"
             android:layout_toStartOf="@+id/imageView_1"
-            android:src="@drawable/phongcaocap"
+            android:layout_toEndOf="@+id/imageView_1"
             android:background="@drawable/bg_input_signin"
-            android:scaleType="centerInside"
-            />
+            android:scaleType="centerCrop"
+            android:src="@drawable/phongcaocap"
+            app:layout_constraintHorizontal_bias="0.0" />
 
         <ImageView
             android:id="@+id/imageView_3"
@@ -102,7 +103,7 @@
             android:layout_below="@+id/imageView_2"
             android:src="@drawable/phongvip"
             android:background="@drawable/bg_input_signin"
-            android:scaleType="centerInside"/>
+            android:scaleType="centerCrop"/>
     </RelativeLayout>
 
     <ImageView
