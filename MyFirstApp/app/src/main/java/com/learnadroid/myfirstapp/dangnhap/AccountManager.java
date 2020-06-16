@@ -1,7 +1,11 @@
 package com.learnadroid.myfirstapp.dangnhap;
 
 
+import com.learnadroid.myfirstapp.actor.Hotel;
 import com.learnadroid.myfirstapp.actor.User;
+
+import java.util.ArrayList;
+import java.util.List;
 
 public class AccountManager {
 
@@ -33,6 +37,9 @@ public class AccountManager {
     public void InitAccount(int id, String email, String fullName, String numberPhone, String sex, String birthDay, String userName, String passWord){
         user = new User(id, email, fullName, numberPhone, sex, birthDay, userName, passWord);
     }
+
+    public Hotel hotelSelected;
+
 
 
 }

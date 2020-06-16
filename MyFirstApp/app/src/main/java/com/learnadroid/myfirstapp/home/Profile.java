@@ -17,6 +17,7 @@ import android.view.ViewGroup;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.ImageView;
+import android.widget.TextView;
 import android.widget.Toast;
 
 import com.learnadroid.myfirstapp.dangnhap.Login;
@@ -26,12 +27,12 @@ import com.learnadroid.myfirstapp.dangnhap.AccountManager;
 
 public class Profile extends Fragment {
 
-    EditText fullName;
-    EditText userName;
-    EditText sex;
-    EditText birthDay;
-    EditText numberPhone;
-    EditText email;
+    TextView fullName;
+    TextView userName;
+    TextView sex;
+    TextView birthDay;
+    TextView numberPhone;
+    TextView email;
     Button btLogOut;
 
 
