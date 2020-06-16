@@ -18,6 +18,8 @@ public class AccountManager {
     public static int bookingId;
     public static int serviceId;
     public static int newId;
+    public  static int image;
+    public static String hotelName="";
 
     public static AccountManager getInstance() {
         if (instance == null) {

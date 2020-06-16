@@ -133,7 +133,7 @@ public class GoogleMapAPI extends FragmentActivity implements OnMapReadyCallback
     }
 
 
-    private void addHotel(ArrayList<Hotel> hotelList) {
+    private void addHotel(final ArrayList<Hotel> hotelList) {
         for (int i = 0; i < hotelList.size(); i++) {
             String location = hotelList.get(i).getLocation();
             if (location != null && !location.equals("")) {
@@ -146,8 +146,7 @@ public class GoogleMapAPI extends FragmentActivity implements OnMapReadyCallback
                         LatLng latLng = new LatLng(address.getLatitude(), address.getLongitude());
                         Marker marker;
                         marker = mMap.addMarker(new MarkerOptions().position(latLng).title(hotelList.get(i).getName()));
-                        marker.setTag(hotelList.get(i).getId());
-
+                        marker.setTag(i);
                     }
                 } catch (Exception e) {
 
@@ -160,7 +159,9 @@ public class GoogleMapAPI extends FragmentActivity implements OnMapReadyCallback
             public void onInfoWindowClick (Marker marker){
                 int id = (int) marker.getTag();
                 Intent intent = new Intent(GoogleMapAPI.this, timphong.class);
-                AccountManager.hotelId = id;
+                AccountManager.hotelId = hotelList.get(id).getId();
+                AccountManager.image = hotelList.get(id).getImage1();
+                AccountManager.hotelName = hotelList.get(id).getName();
                 startActivity(intent);
             }
 

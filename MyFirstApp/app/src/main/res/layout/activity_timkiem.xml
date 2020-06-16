@@ -7,6 +7,21 @@
     android:backgroundTint="#EF5350"
     tools:context=".timkiemkhachsan.timkiem">
 
+    <View
+        android:id="@+id/line_2"
+        android:layout_width="match_parent"
+        android:layout_height="4dp"
+        android:background="#787777"
+        app:layout_constraintTop_toTopOf="@+id/frameLayoutCheckin"
+        />
+
+    <View
+        android:id="@+id/line_1"
+        android:layout_width="match_parent"
+        android:layout_height="2dp"
+        android:background="#131313"
+        app:layout_constraintTop_toTopOf="@+id/frameLayoutCheckin"
+        />
 
     <FrameLayout
         android:id="@+id/frameLayoutCheckin"

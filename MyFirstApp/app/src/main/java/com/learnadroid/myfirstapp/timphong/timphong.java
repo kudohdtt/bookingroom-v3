@@ -12,6 +12,7 @@ import android.text.TextWatcher;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
+import android.widget.ImageView;
 import android.widget.TextView;
 import android.widget.Toast;
 
@@ -33,6 +34,8 @@ public class timphong extends AppCompatActivity {
     private TextView ERchildrent;
     private EditText editAdult;
     private EditText editChildrent;
+    private ImageView image;
+    private TextView name;
 
 
     private String CIdate;
@@ -75,6 +78,12 @@ public class timphong extends AppCompatActivity {
         ERcheckin = findViewById(R.id.ERcheckin2);
         ERcheckout = findViewById(R.id.ERcheckout2);
 
+        image = findViewById(R.id.imageView3);
+        name = findViewById(R.id.textView2);
+
+        image.setImageResource(AccountManager.image);
+        name.setText( AccountManager.hotelName +" Hotel");
+
         //lấy id_hotel mà API gg map và lịch trả về
 
         final int hotelId = AccountManager.hotelId;
@@ -110,6 +119,8 @@ public class timphong extends AppCompatActivity {
                     Toast.makeText(getBaseContext(), "Please check all field again !", Toast.LENGTH_LONG).show();
                 }else {
                     Intent intent = new Intent(timphong.this, roomTypeResult.class);
+                    AccountManager.checkoutdate = checkoutdate.getText().toString();
+                    AccountManager.checkindate = checkindate.getText().toString();
                     startActivity(intent);
                 }
             }
