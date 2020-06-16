@@ -162,6 +162,7 @@ public class GoogleMapAPI extends FragmentActivity implements OnMapReadyCallback
                 AccountManager.hotelId = hotelList.get(id).getId();
                 AccountManager.image = hotelList.get(id).getImage1();
                 AccountManager.hotelName = hotelList.get(id).getName();
+                AccountManager.getInstance().hotelSelected = hotelList.get(id);
                 startActivity(intent);
             }
 

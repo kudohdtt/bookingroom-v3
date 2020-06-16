@@ -73,8 +73,8 @@ public class timphong extends AppCompatActivity {
         getSupportActionBar().hide();
         checkInDialog = new Dialog(timphong.this);
 
-        txtHotelName = findViewById(R.id.txtHotelName);
-        imgHotel = findViewById(R.id.imageViewHotel);
+        txtHotelName = findViewById(R.id.textView2);
+        imgHotel = findViewById(R.id.imageView3);
         checkindate = findViewById(R.id.textViewCI2);
         checkoutdate = findViewById(R.id.textViewCO2);
         search = findViewById(R.id.buttonSearch2);
