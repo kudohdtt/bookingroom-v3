@@ -19,6 +19,7 @@ import com.learnadroid.myfirstapp.actor.RoomType;
 import com.learnadroid.myfirstapp.dangnhap.AccountManager;
 import com.learnadroid.myfirstapp.database.ConnectionClass;
 import com.learnadroid.myfirstapp.R;
+import com.learnadroid.myfirstapp.home.MainActivity;
 import com.learnadroid.myfirstapp.timkiemkhachsan.hotelResult;
 
 import java.sql.Connection;
@@ -89,7 +90,7 @@ public class roomTypeResult extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 progressDialog.dismiss();
-                Intent intent = new Intent(roomTypeResult.this, hotelResult.class);
+                Intent intent = new Intent(roomTypeResult.this, MainActivity.class);
                 startActivity(intent);
             }
         });

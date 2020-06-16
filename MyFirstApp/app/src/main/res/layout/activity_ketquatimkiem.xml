@@ -7,13 +7,25 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="#EFECEC"
+
     >
 
+    <Button
 
+        android:id="@+id/btn_back"
+        android:layout_width="40dp"
+        android:layout_height="40dp"
+        android:layout_marginStart="16dp"
+        android:layout_marginTop="10dp"
+        android:layout_marginBottom="20dp"
+        android:background="@drawable/back_button"
+        app:layout_constraintBottom_toTopOf="@id/Back"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
     <RelativeLayout
         android:id="@+id/Back"
         android:layout_width="match_parent"
-        android:layout_height="60dp"
+        android:layout_height="75dp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintBottom_toTopOf="@+id/listHotel"
@@ -22,12 +34,12 @@
         android:layout_marginTop="10dp"
         android:layout_marginEnd="16dp"
         android:layout_marginRight="16dp"
-        android:layout_marginBottom="25dp"
-        android:background="@color/ic_pw_background"
+        android:layout_marginBottom="5dp"
+        android:background="@android:drawable/dialog_holo_light_frame"
         >
 
         <Button
-            android:id="@+id/btn_back"
+            android:id="@+id/bt_BoLoc"
             android:layout_width="108dp"
             android:layout_height="40dp"
             android:layout_alignParentStart="true"
@@ -35,7 +47,7 @@
             android:layout_marginStart="32dp"
             android:layout_marginBottom="9dp"
             android:background="@drawable/bobutton"
-            android:text="Quay lại"
+            android:text="Bo Loc"
             android:textAllCaps="false"
             android:textColor="#fff" />
 
@@ -50,7 +62,7 @@
             android:layout_marginEnd="32dp"
             android:layout_marginBottom="10dp"
             android:background="@drawable/bobutton"
-            android:text="Sắp xếp"
+            android:text="Sapxep"
             android:textAllCaps="false"
             android:textColor="#fff" />
     </RelativeLayout>
@@ -63,7 +75,7 @@
         android:layout_marginTop="10dp"
         android:layout_marginEnd="16dp"
         android:layout_marginBottom="16dp"
-        android:background="@color/ic_pw_background"
+        android:background="@android:drawable/dialog_holo_light_frame"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="1.0"

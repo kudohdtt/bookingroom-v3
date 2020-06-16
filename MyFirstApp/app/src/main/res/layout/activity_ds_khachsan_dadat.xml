@@ -4,7 +4,25 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".ordered.dsKhachsanDadat">
+    tools:context=".ordered.DsKhachsanDadat">
+
+    <View
+        android:id="@+id/line_2"
+        android:layout_width="match_parent"
+        android:layout_height="2dp"
+        android:layout_above="@+id/frameLayoutCheckin"
+        android:layout_marginBottom="-115dp"
+        android:background="#787777"
+        app:layout_constraintTop_toTopOf="@+id/listviewCacphong" />
+
+    <View
+        android:id="@+id/line_1"
+        android:layout_width="match_parent"
+        android:layout_height="2dp"
+        android:layout_above="@+id/frameLayoutCheckin"
+        android:layout_marginBottom="-113dp"
+        android:background="#131313"
+        app:layout_constraintTop_toTopOf="@+id/listviewCacphong" />
 
     <ImageView
         android:id="@+id/imageView8"
@@ -65,6 +83,7 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent">
+
     </ListView>
 
 

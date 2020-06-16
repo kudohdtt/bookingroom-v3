@@ -7,6 +7,7 @@
     tools:context=".Profile">
 
     <de.hdodenhof.circleimageview.CircleImageView
+        android:layout_marginTop="35dp"
         android:id="@+id/imageView"
         android:layout_width="match_parent"
         android:layout_height="105dp"
@@ -39,14 +40,14 @@
         android:layout_marginBottom="130dp"
         android:foreground="#CAFFA726" />
 
-    <TextView
+    <Button
         android:id="@+id/txtnut"
         android:layout_width="match_parent"
         android:layout_height="30dp"
         android:layout_below="@+id/imageView"
         android:layout_alignParentEnd="true"
         android:layout_alignParentRight="true"
-        android:layout_marginTop="2dp"
+        android:layout_marginTop="10dp"
         android:layout_marginEnd="0dp"
         android:layout_marginRight="0dp"
         android:background="#6E6C6C"
@@ -71,20 +72,21 @@
         android:fontFamily="serif"
         android:textColor="#000000" />
 
-    <TextView
+    <EditText
         android:id="@+id/txtten"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_alignParentEnd="true"
         android:layout_alignParentRight="true"
         android:layout_alignParentBottom="true"
-        android:layout_marginEnd="21dp"
-        android:layout_marginRight="21dp"
-        android:layout_marginBottom="480dp"
+        android:layout_marginEnd="51dp"
+        android:layout_marginRight="51dp"
+        android:layout_marginBottom="466dp"
         android:gravity="end"
         android:text="Đoàn Xuân Thu"
 
         android:textColor="#000000" />
+
 
     <View
         android:layout_width="wrap_content"
@@ -108,16 +110,16 @@
         android:fontFamily="serif"
         android:textColor="#000000" />
 
-    <TextView
+    <EditText
         android:id="@+id/txttendn"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_alignParentEnd="true"
         android:layout_alignParentRight="true"
         android:layout_alignParentBottom="true"
-        android:layout_marginEnd="21dp"
-        android:layout_marginRight="21dp"
-        android:layout_marginBottom="430dp"
+        android:layout_marginEnd="51dp"
+        android:layout_marginRight="51dp"
+        android:layout_marginBottom="417dp"
         android:gravity="end"
         android:text="thubon99"
         android:textColor="#000000" />
@@ -144,19 +146,20 @@
         android:fontFamily="serif"
         android:textColor="#000000" />
 
-    <TextView
+    <EditText
         android:id="@+id/txtgioitinh"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_alignParentEnd="true"
         android:layout_alignParentRight="true"
         android:layout_alignParentBottom="true"
-        android:layout_marginEnd="21dp"
-        android:layout_marginRight="21dp"
-        android:layout_marginBottom="361dp"
+        android:layout_marginEnd="51dp"
+        android:layout_marginRight="51dp"
+        android:layout_marginBottom="351dp"
         android:gravity="end"
         android:text="Nam"
         android:textColor="#000000" />
+
 
     <View
         android:layout_width="wrap_content"
@@ -181,20 +184,21 @@
         android:textColor="#000000" />
 
 
-    <TextView
+    <EditText
         android:id="@+id/txtngaysin"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_alignParentEnd="true"
         android:layout_alignParentRight="true"
         android:layout_alignParentBottom="true"
-        android:layout_marginEnd="21dp"
-        android:layout_marginRight="21dp"
-        android:layout_marginBottom="313dp"
+        android:layout_marginEnd="51dp"
+        android:layout_marginRight="51dp"
+        android:layout_marginBottom="301dp"
         android:gravity="end"
         android:text="03-07-1999"
 
         android:textColor="#000000" />
+
 
     <View
         android:layout_width="wrap_content"
@@ -218,20 +222,21 @@
         android:fontFamily="serif"
         android:textColor="#000000" />
 
-    <TextView
+    <EditText
         android:id="@+id/txtsodienthoai"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_alignParentEnd="true"
         android:layout_alignParentRight="true"
         android:layout_alignParentBottom="true"
-        android:layout_marginEnd="21dp"
-        android:layout_marginRight="21dp"
-        android:layout_marginBottom="260dp"
+        android:layout_marginEnd="51dp"
+        android:layout_marginRight="51dp"
+        android:layout_marginBottom="250dp"
         android:gravity="end"
         android:text="*********83"
 
         android:textColor="#000000" />
+
 
     <View
         android:layout_width="wrap_content"
@@ -262,16 +267,16 @@
         android:fontFamily="serif"
         android:textColor="#000000" />
 
-    <TextView
+    <EditText
         android:id="@+id/txtemail"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_alignParentEnd="true"
         android:layout_alignParentRight="true"
         android:layout_alignParentBottom="true"
-        android:layout_marginEnd="21dp"
-        android:layout_marginRight="21dp"
-        android:layout_marginBottom="218dp"
+        android:layout_marginEnd="51dp"
+        android:layout_marginRight="51dp"
+        android:layout_marginBottom="201dp"
         android:gravity="end"
         android:text="deptrai@gmail.com"
         android:textColor="#000000" />
@@ -305,16 +310,6 @@
         android:fontFamily="serif"
         android:textColor="#000000" />
 
-    <ImageView
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_alignParentEnd="true"
-        android:layout_alignParentRight="true"
-        android:layout_alignParentBottom="true"
-        android:layout_marginEnd="18dp"
-        android:layout_marginRight="18dp"
-        android:layout_marginBottom="140dp"
-        android:src="@drawable/tieptuc" />
 
     <View
         android:layout_width="wrap_content"
