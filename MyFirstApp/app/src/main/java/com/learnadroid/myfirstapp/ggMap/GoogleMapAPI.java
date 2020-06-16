@@ -133,7 +133,7 @@ public class GoogleMapAPI extends FragmentActivity implements OnMapReadyCallback
     }
 
 
-    private void addHotel(ArrayList<Hotel> hotelList) {
+    private void addHotel(final ArrayList<Hotel> hotelList) {
         for (int i = 0; i < hotelList.size(); i++) {
             String location = hotelList.get(i).getLocation();
             if (location != null && !location.equals("")) {
@@ -161,6 +161,15 @@ public class GoogleMapAPI extends FragmentActivity implements OnMapReadyCallback
                 int id = (int) marker.getTag();
                 Intent intent = new Intent(GoogleMapAPI.this, timphong.class);
                 AccountManager.hotelId = id;
+                for (int i = 0; i < hotels.size(); i++){
+                    if (id == hotels.get(i).getId()){
+                        AccountManager.getInstance().hotelSelected = hotels.get(i);
+                        break;
+                    }
+                    if (i == hotels.size() - 1)
+                        AccountManager.getInstance().hotelSelected = new Hotel(1, "dmmmm", "Ha Noi", 1, "Ha Noi", 1,1,1, "Ha Noi", 100, false);
+                }
+
                 startActivity(intent);
             }
 
@@ -317,6 +326,7 @@ public class GoogleMapAPI extends FragmentActivity implements OnMapReadyCallback
             Toast.makeText(getBaseContext(), "" + z, Toast.LENGTH_LONG).show();
             //fix loi
             addHotel(hotels);
+
 
         }
     }

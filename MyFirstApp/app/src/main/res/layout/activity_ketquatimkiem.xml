@@ -9,22 +9,7 @@
     android:background="#EFECEC"
     >
 
-    <Button
 
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintBottom_toTopOf="@id/Back"
-        android:layout_width="50dp"
-        android:layout_height="50dp"
-        android:layout_marginStart="16dp"
-        android:layout_marginLeft="16dp"
-        android:layout_marginTop="10dp"
-        android:layout_marginEnd="16dp"
-        android:layout_marginRight="16dp"
-        android:layout_marginBottom="20dp"
-        android:background="@drawable/back_button"
-        android:id="@+id/btn_back"
-        />
     <RelativeLayout
         android:id="@+id/Back"
         android:layout_width="match_parent"
@@ -42,7 +27,7 @@
         >
 
         <Button
-            android:id="@+id/bt_BoLoc"
+            android:id="@+id/btn_back"
             android:layout_width="108dp"
             android:layout_height="40dp"
             android:layout_alignParentStart="true"
@@ -50,7 +35,7 @@
             android:layout_marginStart="32dp"
             android:layout_marginBottom="9dp"
             android:background="@drawable/bobutton"
-            android:text="Bo Loc"
+            android:text="Quay lại"
             android:textAllCaps="false"
             android:textColor="#fff" />
 
@@ -65,7 +50,7 @@
             android:layout_marginEnd="32dp"
             android:layout_marginBottom="10dp"
             android:background="@drawable/bobutton"
-            android:text="Sapxep"
+            android:text="Sắp xếp"
             android:textAllCaps="false"
             android:textColor="#fff" />
     </RelativeLayout>

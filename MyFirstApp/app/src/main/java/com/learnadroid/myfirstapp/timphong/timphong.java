@@ -3,15 +3,19 @@ package com.learnadroid.myfirstapp.timphong;
 import androidx.annotation.RequiresApi;
 import androidx.appcompat.app.AppCompatActivity;
 
+import android.app.Dialog;
 import android.content.Intent;
 import android.graphics.Color;
+import android.graphics.drawable.ColorDrawable;
 import android.os.Build;
 import android.os.Bundle;
 import android.text.Editable;
 import android.text.TextWatcher;
 import android.view.View;
 import android.widget.Button;
+import android.widget.DatePicker;
 import android.widget.EditText;
+import android.widget.ImageView;
 import android.widget.TextView;
 import android.widget.Toast;
 
@@ -27,6 +31,9 @@ public class timphong extends AppCompatActivity {
     private EditText checkindate;
     private EditText checkoutdate;
 
+    private TextView txtHotelName;
+    private ImageView imgHotel;
+
     private TextView ERcheckin;
     private TextView ERcheckout;
     private TextView ERadults;
@@ -34,12 +41,12 @@ public class timphong extends AppCompatActivity {
     private EditText editAdult;
     private EditText editChildrent;
 
+    private Dialog checkInDialog;
+    private DatePicker datePicker;
 
     private String CIdate;
     private String COdate;
 
-    private Boolean isValidCIdate = false;
-    private Boolean isValidCodate = false;
     private Boolean isValidAdults = false;
     private Boolean isValidChildrent = false;
 
@@ -62,7 +69,10 @@ public class timphong extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_timphong);
         getSupportActionBar().hide();
+        checkInDialog = new Dialog(timphong.this);
 
+        txtHotelName = findViewById(R.id.txtHotelName);
+        imgHotel = findViewById(R.id.imageViewHotel);
         checkindate = findViewById(R.id.textViewCI2);
         checkoutdate = findViewById(R.id.textViewCO2);
         search = findViewById(R.id.buttonSearch2);
@@ -79,6 +89,10 @@ public class timphong extends AppCompatActivity {
 
         final int hotelId = AccountManager.hotelId;
 
+        txtHotelName.setText(AccountManager.getInstance().hotelSelected.getName());
+        imgHotel.setImageResource(AccountManager.getInstance().hotelSelected.getImage1());
+        AccountManager.keyword = AccountManager.getInstance().hotelSelected.getCity();
+
         //lấy thời gian checkin checkout mà lịch trả về
         CIdate = AccountManager.checkindate;
         checkindate.setText(CIdate);
@@ -89,23 +103,21 @@ public class timphong extends AppCompatActivity {
         checkindate.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent intent = new Intent(timphong.this, checkin.class);
-                startActivity(intent);
+                ShowPopupCalendar(checkindate);
             }
         });
 
         checkoutdate.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent intent = new Intent(timphong.this, checkout.class);
-                startActivity(intent);
+                ShowPopupCalendar(checkoutdate);
             }
         });
 
         search.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                if(!isValidCIdate || !isValidCodate || !isValidAdults || !isValidChildrent || checkoutdate.getText().toString().trim().equals("") || checkindate.getText().toString().trim().equals("")
+                if(!isValidAdults || !isValidChildrent || checkoutdate.getText().toString().trim().equals("") || checkindate.getText().toString().trim().equals("")
                         && editAdult.getText().toString().trim().equals("")){
                     Toast.makeText(getBaseContext(), "Please check all field again !", Toast.LENGTH_LONG).show();
                 }else {
@@ -166,4 +178,37 @@ public class timphong extends AppCompatActivity {
             }
         });
     }
+
+    private void ShowPopupCalendar(final EditText date) {
+        checkInDialog.setContentView(R.layout.popup_calendar);
+        TextView txtclose;
+        Button btnConfirm;
+
+        datePicker = checkInDialog.findViewById(R.id.checkInDate);
+
+        txtclose = checkInDialog.findViewById(R.id.txtclosePopup);
+
+        btnConfirm = checkInDialog.findViewById(R.id.btnConfirm);
+
+        txtclose.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                checkInDialog.dismiss();
+            }
+        });
+
+        btnConfirm.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                date.setText(datePicker.getDayOfMonth() + "/" + (datePicker.getMonth()+1));
+                checkInDialog.dismiss();
+            }
+        });
+
+
+
+        checkInDialog.getWindow().setBackgroundDrawable(new ColorDrawable(Color.TRANSPARENT));
+        checkInDialog.show();
+    }
+
 }

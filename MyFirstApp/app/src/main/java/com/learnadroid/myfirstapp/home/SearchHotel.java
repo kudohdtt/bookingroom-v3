@@ -54,7 +54,7 @@ public class SearchHotel extends Fragment {
     private Boolean isValidCIdate = false;
     private Boolean isValidCodate = false;
     private Boolean isValidAdults = false;
-    private Boolean isValidChildrent = false;
+    private Boolean isValidChildrent = true;
 
 
     @Override
@@ -101,7 +101,7 @@ public class SearchHotel extends Fragment {
         checkindate.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-
+                isValidCIdate = true;
                 ShowPopupCalendar(checkindate);
             }
         });
@@ -109,7 +109,7 @@ public class SearchHotel extends Fragment {
         checkoutdate.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-
+                isValidCodate = true;
                 ShowPopupCalendar(checkoutdate);
             }
         });
@@ -131,8 +131,8 @@ public class SearchHotel extends Fragment {
             @Override
             public void onClick(View v) {
 
-                if(!isValidCity && !isValidCIdate && !isValidCodate && !isValidAdults && !isValidChildrent && hotel.getText().toString().trim().equals("") && checkoutdate.getText().toString().trim().equals("")
-                        && checkindate.getText().toString().trim().equals("") && editAdult.getText().toString().trim().equals("")){
+                if(!isValidCIdate || !isValidCodate || !isValidAdults || !isValidChildrent || hotel.getText().toString().trim().equals("") || checkoutdate.getText().toString().trim().equals("")
+                        || checkindate.getText().toString().trim().equals("") || editAdult.getText().toString().trim().equals("")){
                     Toast.makeText(getContext(), "Please check all field again !", Toast.LENGTH_LONG).show();
                 }else {
                     Intent intent = new Intent(getContext(), hotelResult.class);
