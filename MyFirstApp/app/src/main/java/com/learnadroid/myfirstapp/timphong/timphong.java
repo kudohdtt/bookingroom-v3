@@ -51,6 +51,7 @@ public class timphong extends AppCompatActivity {
 
     private Boolean isValidAdults = false;
     private Boolean isValidChildrent = false;
+    private Boolean isValidDate =  false;
 
     @RequiresApi(api = Build.VERSION_CODES.M)
     @Override
@@ -125,9 +126,18 @@ public class timphong extends AppCompatActivity {
         search.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                if(!isValidAdults || !isValidChildrent || checkoutdate.getText().toString().trim().equals("") || checkindate.getText().toString().trim().equals("")
-                        && editAdult.getText().toString().trim().equals("")){
+
+                isValidDate = checkDate(checkindate.getText().toString(),checkoutdate.getText().toString());
+
+                if(!isValidDate) {
+
+                    ERcheckin.setText("Checkin date must be smaller than checkout date");
+
+                }else if(!isValidAdults || !isValidChildrent || checkoutdate.getText().toString().trim().equals("") || checkindate.getText().toString().trim().equals("")
+                        || editAdult.getText().toString().trim().equals("")){
+                    ERcheckin.setText("");
                     Toast.makeText(getBaseContext(), "Please check all field again !", Toast.LENGTH_LONG).show();
+
                 }else {
                     Intent intent = new Intent(timphong.this, roomTypeResult.class);
                     AccountManager.checkoutdate = checkoutdate.getText().toString();
@@ -219,6 +229,17 @@ public class timphong extends AppCompatActivity {
 
         checkInDialog.getWindow().setBackgroundDrawable(new ColorDrawable(Color.TRANSPARENT));
         checkInDialog.show();
+    }
+
+    private Boolean checkDate(String checkindate, String checkoutdate){
+        if(!checkindate.trim().equals("") && !checkoutdate.trim().equals("")){
+            if( Integer.parseInt(checkindate.split("/")[1])  > Integer.parseInt(checkoutdate.split("/")[1])){
+                return false;
+            }else if(Integer.parseInt(checkindate.split("/")[0])  > Integer.parseInt(checkoutdate.split("/")[0])){
+                return false;
+            }
+        }
+        return true;
     }
 
 }

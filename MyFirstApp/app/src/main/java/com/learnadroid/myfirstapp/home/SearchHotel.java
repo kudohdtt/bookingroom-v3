@@ -50,11 +50,10 @@ public class SearchHotel extends Fragment {
 
 
     //bien validate
-    private Boolean isValidCity = false;
-    private Boolean isValidCIdate = false;
-    private Boolean isValidCodate = false;
     private Boolean isValidAdults = false;
     private Boolean isValidChildrent = true;
+    private Boolean isValidDate =  false;
+
 
 
     @Override
@@ -101,7 +100,6 @@ public class SearchHotel extends Fragment {
         checkindate.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                isValidCIdate = true;
                 ShowPopupCalendar(checkindate);
             }
         });
@@ -109,7 +107,6 @@ public class SearchHotel extends Fragment {
         checkoutdate.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                isValidCodate = true;
                 ShowPopupCalendar(checkoutdate);
             }
         });
@@ -130,10 +127,16 @@ public class SearchHotel extends Fragment {
         search.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
+                isValidDate = checkDate(checkindate.getText().toString(),checkoutdate.getText().toString());
 
-                if(!isValidCIdate || !isValidCodate || !isValidAdults || !isValidChildrent || hotel.getText().toString().trim().equals("") || checkoutdate.getText().toString().trim().equals("")
+                if(!isValidDate){
+
+                    ERcheckin.setText("Checkin date must be smaller than checkout date");
+
+                }else if(!isValidAdults || !isValidChildrent || hotel.getText().toString().trim().equals("") || checkoutdate.getText().toString().trim().equals("")
                         || checkindate.getText().toString().trim().equals("") || editAdult.getText().toString().trim().equals("")){
                     Toast.makeText(getContext(), "Please check all field again !", Toast.LENGTH_LONG).show();
+                    ERcheckin.setText("");
                 }else {
                     Intent intent = new Intent(getContext(), hotelResult.class);
                     AccountManager.keyword = hotel.getText().toString();
@@ -240,5 +243,16 @@ public class SearchHotel extends Fragment {
     @Override
     public void onCreate(@Nullable Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
+    }
+
+    private Boolean checkDate(String checkindate, String checkoutdate){
+        if(!checkindate.trim().equals("") && !checkoutdate.trim().equals("")){
+            if( Integer.parseInt(checkindate.split("/")[1])  > Integer.parseInt(checkoutdate.split("/")[1])){
+                return false;
+            }else if(Integer.parseInt(checkindate.split("/")[0])  > Integer.parseInt(checkoutdate.split("/")[0])){
+                return false;
+            }
+        }
+        return true;
     }
 }

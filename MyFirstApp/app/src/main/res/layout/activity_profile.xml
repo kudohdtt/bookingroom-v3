@@ -55,7 +55,9 @@
         android:text="Nhấp để thay đổi"
         android:textStyle="bold"
         android:fontFamily="serif"
-        android:textColor="#ffffff" />
+        android:textColor="#ffffff"
+
+        />
 
     <TextView
         android:id="@+id/txtHoten"
