@@ -4,13 +4,12 @@
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
     android:layout_margin="3dp"
-    android:background="@drawable/shadow_13520"
     xmlns:app="http://schemas.android.com/apk/res-auto">
 
     <RelativeLayout
         android:id="@+id/tieude_ks"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
+        android:layout_height="100dp"
         android:layout_marginStart="10dp"
         android:layout_alignParentStart="true"
         android:layout_alignParentTop="true">
@@ -36,10 +35,10 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_below="@+id/name_hotel"
-            android:layout_alignParentEnd="true"
+            android:layout_alignParentStart="true"
             android:layout_alignParentRight="true"
-            android:layout_marginTop="5dp"
-            android:layout_marginEnd="150dp"
+            android:layout_marginStart="34dp"
+            android:layout_marginTop="10dp"
             android:numStars="5"
             android:progressTint="#F1DB1E"
             android:rating="2.6" />
@@ -58,7 +57,7 @@
         android:id="@+id/image_hotel"
         android:layout_alignParentStart="true"
         android:layout_below="@+id/line_1"
-        android:layout_marginTop="10dp"
+        android:layout_marginTop="0dp"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
 
@@ -76,20 +75,22 @@
             android:background="@drawable/bg_input_signin"
 
             />
+
         <ImageView
             android:id="@+id/imageView_2"
             android:layout_width="0dp"
             android:layout_height="75dp"
-            android:layout_marginEnd="3dp"
-            android:layout_alignParentEnd="true"
             android:layout_alignParentTop="true"
-            android:layout_toEndOf="@+id/imageView_1"
-            app:layout_constraintHorizontal_bias="0.0"
+            android:layout_alignParentEnd="true"
+            android:layout_marginStart="0dp"
+            android:layout_marginTop="-1dp"
+            android:layout_marginEnd="3dp"
             android:layout_toStartOf="@+id/imageView_1"
-            android:src="@drawable/phongcaocap"
+            android:layout_toEndOf="@+id/imageView_1"
             android:background="@drawable/bg_input_signin"
-            android:scaleType="centerInside"
-            />
+            android:scaleType="centerCrop"
+            android:src="@drawable/phongcaocap"
+            app:layout_constraintHorizontal_bias="0.0" />
 
         <ImageView
             android:id="@+id/imageView_3"
@@ -102,7 +103,7 @@
             android:layout_below="@+id/imageView_2"
             android:src="@drawable/phongvip"
             android:background="@drawable/bg_input_signin"
-            android:scaleType="centerInside"/>
+            android:scaleType="centerCrop"/>
     </RelativeLayout>
 
     <ImageView
@@ -114,13 +115,9 @@
         android:layout_marginTop="14dp"
         android:layout_alignParentStart="true"
         android:layout_below="@+id/image_hotel"
-<<<<<<< Updated upstream
-        app:srcCompat="@drawable/Locationicon"
-        android:tint="#045D85"/>
-=======
         app:srcCompat="@drawable/locationicon"
         android:tint="#98ccfd"/>
->>>>>>> Stashed changes
+
     <TextView
         android:id="@+id/text_location_hotel"
         android:layout_below="@+id/image_hotel"
@@ -137,7 +134,7 @@
         android:id="@+id/hotellicon"
         android:layout_width="30dp"
         android:layout_height="40dp"
-        android:src="@drawable/Hotellicon"
+        android:src="@drawable/hotellicon"
         android:layout_below="@+id/location_hotel"
         android:layout_alignParentStart="true"
         android:layout_marginStart="15dp"
@@ -160,7 +157,7 @@
         android:id="@+id/icprmotion"
         android:layout_width="30dp"
         android:layout_height="30dp"
-        android:src="@drawable/PromotionIcon"
+        android:src="@drawable/promotion_icon"
         android:layout_below="@+id/gt_hotel"
         android:layout_alignParentStart="true"
         android:layout_marginStart="15dp"

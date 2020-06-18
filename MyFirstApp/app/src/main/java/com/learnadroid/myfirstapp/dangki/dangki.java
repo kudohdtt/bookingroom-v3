@@ -1,6 +1,5 @@
 package com.learnadroid.myfirstapp.dangki;
 
-import android.app.ProgressDialog;
 import android.content.Intent;
 import android.graphics.Color;
 import android.os.AsyncTask;
@@ -20,7 +19,6 @@ import androidx.annotation.RequiresApi;
 import androidx.appcompat.app.AppCompatActivity;
 
 import com.learnadroid.myfirstapp.dangnhap.AccountManager;
-import com.learnadroid.myfirstapp.dangnhap.MainActivity;
 import com.learnadroid.myfirstapp.database.ConnectionClass;
 import com.learnadroid.myfirstapp.R;
 

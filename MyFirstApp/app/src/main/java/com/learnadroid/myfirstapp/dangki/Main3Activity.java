@@ -10,7 +10,8 @@ import android.view.View;
 import android.widget.Button;
 
 import com.learnadroid.myfirstapp.R;
-import com.learnadroid.myfirstapp.timkiemkhachsan.timkiem;
+import com.learnadroid.myfirstapp.dangnhap.Login;
+import com.learnadroid.myfirstapp.home.MainActivity;
 
 public class Main3Activity extends AppCompatActivity {
 
@@ -38,7 +39,7 @@ public class Main3Activity extends AppCompatActivity {
         start.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent intent = new Intent(Main3Activity.this, timkiem.class);
+                Intent intent = new Intent(Main3Activity.this, Login.class);
                 startActivity(intent);
             }
         });

@@ -7,6 +7,7 @@
     tools:context=".Profile">
 
     <de.hdodenhof.circleimageview.CircleImageView
+        android:layout_marginTop="35dp"
         android:id="@+id/imageView"
         android:layout_width="match_parent"
         android:layout_height="105dp"
@@ -39,14 +40,14 @@
         android:layout_marginBottom="130dp"
         android:foreground="#CAFFA726" />
 
-    <TextView
+    <Button
         android:id="@+id/txtnut"
         android:layout_width="match_parent"
         android:layout_height="30dp"
         android:layout_below="@+id/imageView"
         android:layout_alignParentEnd="true"
         android:layout_alignParentRight="true"
-        android:layout_marginTop="2dp"
+        android:layout_marginTop="10dp"
         android:layout_marginEnd="0dp"
         android:layout_marginRight="0dp"
         android:background="#6E6C6C"
@@ -54,7 +55,9 @@
         android:text="Nhấp để thay đổi"
         android:textStyle="bold"
         android:fontFamily="serif"
-        android:textColor="#ffffff" />
+        android:textColor="#ffffff"
+
+        />
 
     <TextView
         android:id="@+id/txtHoten"
@@ -86,16 +89,6 @@
 
         android:textColor="#000000" />
 
-    <ImageView
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_alignParentEnd="true"
-        android:layout_alignParentRight="true"
-        android:layout_alignParentBottom="true"
-        android:layout_marginEnd="18dp"
-        android:layout_marginRight="18dp"
-        android:layout_marginBottom="477dp"
-        android:src="@drawable/tieptuc" />
 
     <View
         android:layout_width="wrap_content"
@@ -133,17 +126,6 @@
         android:text="thubon99"
         android:textColor="#000000" />
 
-    <ImageView
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_alignParentEnd="true"
-        android:layout_alignParentRight="true"
-        android:layout_alignParentBottom="true"
-        android:layout_marginEnd="18dp"
-        android:layout_marginRight="18dp"
-        android:layout_marginBottom="426dp"
-        android:src="@drawable/tieptuc" />
-
     <View
         android:layout_width="wrap_content"
         android:layout_height="1dp"
@@ -180,16 +162,6 @@
         android:text="Nam"
         android:textColor="#000000" />
 
-    <ImageView
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_alignParentEnd="true"
-        android:layout_alignParentRight="true"
-        android:layout_alignParentBottom="true"
-        android:layout_marginEnd="18dp"
-        android:layout_marginRight="18dp"
-        android:layout_marginBottom="362dp"
-        android:src="@drawable/tieptuc" />
 
     <View
         android:layout_width="wrap_content"
@@ -229,16 +201,6 @@
 
         android:textColor="#000000" />
 
-    <ImageView
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_alignParentEnd="true"
-        android:layout_alignParentRight="true"
-        android:layout_alignParentBottom="true"
-        android:layout_marginEnd="18dp"
-        android:layout_marginRight="18dp"
-        android:layout_marginBottom="306dp"
-        android:src="@drawable/tieptuc" />
 
     <View
         android:layout_width="wrap_content"
@@ -277,16 +239,6 @@
 
         android:textColor="#000000" />
 
-    <ImageView
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_alignParentEnd="true"
-        android:layout_alignParentRight="true"
-        android:layout_alignParentBottom="true"
-        android:layout_marginEnd="18dp"
-        android:layout_marginRight="18dp"
-        android:layout_marginBottom="259dp"
-        android:src="@drawable/tieptuc" />
 
     <View
         android:layout_width="wrap_content"
@@ -331,17 +283,6 @@
         android:text="deptrai@gmail.com"
         android:textColor="#000000" />
 
-    <ImageView
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_alignParentEnd="true"
-        android:layout_alignParentRight="true"
-        android:layout_alignParentBottom="true"
-        android:layout_marginEnd="18dp"
-        android:layout_marginRight="18dp"
-        android:layout_marginBottom="214dp"
-        android:src="@drawable/tieptuc" />
-
     <View
         android:layout_width="wrap_content"
         android:layout_height="1dp"
@@ -371,16 +312,6 @@
         android:fontFamily="serif"
         android:textColor="#000000" />
 
-    <ImageView
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_alignParentEnd="true"
-        android:layout_alignParentRight="true"
-        android:layout_alignParentBottom="true"
-        android:layout_marginEnd="18dp"
-        android:layout_marginRight="18dp"
-        android:layout_marginBottom="140dp"
-        android:src="@drawable/tieptuc" />
 
     <View
         android:layout_width="wrap_content"

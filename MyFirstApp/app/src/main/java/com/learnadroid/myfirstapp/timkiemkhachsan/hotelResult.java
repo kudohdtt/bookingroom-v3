@@ -9,6 +9,7 @@ import android.os.Bundle;
 import android.view.View;
 import android.widget.AdapterView;
 import android.widget.Button;
+import android.widget.ImageButton;
 import android.widget.ListView;
 import android.widget.Toast;
 
@@ -19,6 +20,7 @@ import com.learnadroid.myfirstapp.actor.Hotel;
 import com.learnadroid.myfirstapp.dangnhap.AccountManager;
 import com.learnadroid.myfirstapp.database.ConnectionClass;
 import com.learnadroid.myfirstapp.R;
+import com.learnadroid.myfirstapp.home.MainActivity;
 import com.learnadroid.myfirstapp.roomtype.roomTypeResult;
 
 
@@ -39,7 +41,7 @@ public class hotelResult extends AppCompatActivity {
     private String checkindate;
     private String checkoutdate;
     private int id_city;
-    Button back;
+    ImageButton back;
 
     @RequiresApi(api = Build.VERSION_CODES.M)
     @Override
@@ -73,8 +75,6 @@ public class hotelResult extends AppCompatActivity {
         checkindate = AccountManager.checkindate;
         checkoutdate = AccountManager.checkoutdate;
 
-        Toast.makeText(getApplicationContext(), "keyword: " + checkindate, Toast.LENGTH_LONG).show();
-
         Anhxa ax = new Anhxa();
         ax.execute();
 
@@ -93,7 +93,7 @@ public class hotelResult extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 progressDialog.dismiss();
-                Intent intent = new Intent(hotelResult.this, timkiem.class);
+                Intent intent = new Intent(hotelResult.this, MainActivity.class);
                 startActivity(intent);
             }
         });

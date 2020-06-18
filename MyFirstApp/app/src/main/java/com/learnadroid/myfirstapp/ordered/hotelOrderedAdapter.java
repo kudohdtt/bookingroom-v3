@@ -55,8 +55,8 @@ public class hotelOrderedAdapter extends BaseAdapter {
         // gán giá trị
         hotelOrdered ht = hotelList.get(position);
 
-        txtTen.setText(ht.getTen());
-        txtThanhpho.setText(ht.getThanhpho());
+        txtTen.setText("Khách sạn"+ht.getTen());
+        txtThanhpho.setText("Thành phố :" + ht.getThanhpho());
         txtTrangthai.setText(ht.getTrangthai());
         imgHinh.setImageResource(ht.getHinh());
         imgCham.setImageResource(ht.getCham());

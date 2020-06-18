@@ -1,7 +1,9 @@
 package com.learnadroid.myfirstapp.home;
 
+import android.app.Dialog;
 import android.content.Intent;
 import android.graphics.Color;
+import android.graphics.drawable.ColorDrawable;
 import android.os.Bundle;
 import android.text.Editable;
 import android.text.TextWatcher;
@@ -11,6 +13,7 @@ import android.view.MenuInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Button;
+import android.widget.DatePicker;
 import android.widget.EditText;
 import android.widget.ImageButton;
 import android.widget.TextView;
@@ -19,8 +22,6 @@ import android.widget.Toast;
 import com.learnadroid.myfirstapp.R;
 import com.learnadroid.myfirstapp.dangnhap.AccountManager;
 import com.learnadroid.myfirstapp.ggMap.GoogleMapAPI;
-import com.learnadroid.myfirstapp.timkiemkhachsan.checkin;
-import com.learnadroid.myfirstapp.timkiemkhachsan.checkout;
 import com.learnadroid.myfirstapp.timkiemkhachsan.hotelResult;
 
 import androidx.annotation.NonNull;
@@ -35,6 +36,9 @@ public class SearchHotel extends Fragment {
     private EditText hotel;
     private Button search;
 
+    private Dialog checkInDialog;
+    private DatePicker datePicker;
+
     //loi
     private TextView ERcity;
     private TextView ERcheckin;
@@ -46,11 +50,10 @@ public class SearchHotel extends Fragment {
 
 
     //bien validate
-    private Boolean isValidCity = false;
-    private Boolean isValidCIdate = false;
-    private Boolean isValidCodate = false;
     private Boolean isValidAdults = false;
-    private Boolean isValidChildrent = false;
+    private Boolean isValidChildrent = true;
+    private Boolean isValidDate =  false;
+
 
 
     @Override
@@ -71,12 +74,17 @@ public class SearchHotel extends Fragment {
     @Override
     public void onActivityCreated(@Nullable Bundle savedInstanceState) {
         super.onActivityCreated(savedInstanceState);
+        ((MainActivity) requireActivity()).getSupportActionBar().hide();
         checkindate = getView().findViewById(R.id.txtCIdate);
         checkoutdate = getView().findViewById(R.id.txtCOdate);
         hotel = getView().findViewById(R.id.edtCity);
         editAdult = getView().findViewById(R.id.editAdult);
         editChildrent = getView().findViewById(R.id.editChild);
         search = getView().findViewById(R.id.buttonSearch);
+
+        checkInDialog = new Dialog(getActivity());
+
+
 
         ERcity = getView().findViewById(R.id.ERcity);
         ERadults = getView().findViewById(R.id.ERadults);
@@ -92,18 +100,14 @@ public class SearchHotel extends Fragment {
         checkindate.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent intent = new Intent(getActivity(), checkin.class);
-                AccountManager.keyword = hotel.getText().toString();
-                startActivity(intent);
+                ShowPopupCalendar(checkindate);
             }
         });
 
         checkoutdate.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent intent = new Intent(getActivity(), checkout.class);
-                AccountManager.keyword = hotel.getText().toString();
-                startActivity(intent);
+                ShowPopupCalendar(checkoutdate);
             }
         });
 
@@ -116,11 +120,6 @@ public class SearchHotel extends Fragment {
         });
 
        //set cac truong tim kiem
-        String CIdate = AccountManager.checkindate;
-        checkindate.setText(CIdate);
-
-        String COdate = AccountManager.checkoutdate;
-        checkoutdate.setText(COdate);
 
         String hotelname = AccountManager.keyword;
         hotel.setText(hotelname);
@@ -128,10 +127,16 @@ public class SearchHotel extends Fragment {
         search.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
+                isValidDate = checkDate(checkindate.getText().toString(),checkoutdate.getText().toString());
 
-                if(!isValidCity && !isValidCIdate && !isValidCodate && !isValidAdults && !isValidChildrent && hotel.getText().toString().trim().equals("") && checkoutdate.getText().toString().trim().equals("")
-                        && checkindate.getText().toString().trim().equals("") && editAdult.getText().toString().trim().equals("")){
+                if(!isValidDate){
+
+                    ERcheckin.setText("Checkin date must be smaller than checkout date");
+                    ERcheckin.setTextColor(Color.rgb(255, 0, 0));
+                }else if(!isValidAdults || !isValidChildrent || hotel.getText().toString().trim().equals("") || checkoutdate.getText().toString().trim().equals("")
+                        || checkindate.getText().toString().trim().equals("") || editAdult.getText().toString().trim().equals("")){
                     Toast.makeText(getContext(), "Please check all field again !", Toast.LENGTH_LONG).show();
+                    ERcheckin.setText("");
                 }else {
                     Intent intent = new Intent(getContext(), hotelResult.class);
                     AccountManager.keyword = hotel.getText().toString();
@@ -198,6 +203,38 @@ public class SearchHotel extends Fragment {
 
     }
 
+    private void ShowPopupCalendar(final EditText date) {
+        checkInDialog.setContentView(R.layout.popup_calendar);
+        TextView txtclose;
+        Button btnConfirm;
+
+        datePicker = checkInDialog.findViewById(R.id.checkInDate);
+
+        txtclose = checkInDialog.findViewById(R.id.txtclosePopup);
+
+        btnConfirm = checkInDialog.findViewById(R.id.btnConfirm);
+
+        txtclose.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                checkInDialog.dismiss();
+            }
+        });
+
+        btnConfirm.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                date.setText(datePicker.getDayOfMonth() + "/" + (datePicker.getMonth()+1));
+                checkInDialog.dismiss();
+            }
+        });
+
+
+
+        checkInDialog.getWindow().setBackgroundDrawable(new ColorDrawable(Color.TRANSPARENT));
+        checkInDialog.show();
+    }
+
     @Override
     public void onCreateOptionsMenu(Menu menu, MenuInflater inflater) {
 
@@ -206,5 +243,16 @@ public class SearchHotel extends Fragment {
     @Override
     public void onCreate(@Nullable Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
+    }
+
+    private Boolean checkDate(String checkindate, String checkoutdate){
+        if(!checkindate.trim().equals("") && !checkoutdate.trim().equals("")){
+            if( Integer.parseInt(checkindate.split("/")[1])  > Integer.parseInt(checkoutdate.split("/")[1])){
+                return false;
+            }else if(Integer.parseInt(checkindate.split("/")[0])  > Integer.parseInt(checkoutdate.split("/")[0])){
+                return false;
+            }
+        }
+        return true;
     }
 }

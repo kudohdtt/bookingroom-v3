@@ -23,6 +23,9 @@
         <meta-data
             android:name="com.google.android.geo.API_KEY"
             android:value="@string/map_key" />
+        <meta-data
+            android:name="preloaded_fonts"
+            android:resource="@array/preloaded_fonts" />
 
         <activity android:name=".home.MainActivity" >
 
@@ -37,7 +40,7 @@
         <activity android:name=".dangki.Main2Activity">
 
         </activity>
-        <activity android:name=".dangnhap.MainActivity">
+        <activity android:name=".dangnhap.Login">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 

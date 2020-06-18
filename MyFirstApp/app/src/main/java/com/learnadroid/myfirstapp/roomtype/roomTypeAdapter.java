@@ -9,16 +9,16 @@ import android.widget.ImageView;
 import android.widget.TextView;
 
 import com.learnadroid.myfirstapp.R;
-import com.learnadroid.myfirstapp.actor.roomType;
+import com.learnadroid.myfirstapp.actor.RoomType;
 
 import java.util.List;
 
 public class roomTypeAdapter extends BaseAdapter {
     private Context context;
     private int layout;
-    private List<roomType> loaiphongList;
+    private List<RoomType> loaiphongList;
 
-    public roomTypeAdapter(Context context, int layout, List<roomType> loaiphongList) {
+    public roomTypeAdapter(Context context, int layout, List<RoomType> loaiphongList) {
         this.context = context;
         this.layout = layout;
         this.loaiphongList = loaiphongList;
@@ -56,7 +56,7 @@ public class roomTypeAdapter extends BaseAdapter {
         ImageView imgHinh = (ImageView) view.findViewById(R.id.imageviewHinh);
 
         //gán giá trị
-        roomType loaiphong = loaiphongList.get(i);
+        RoomType loaiphong = loaiphongList.get(i);
         txtTen.setText(loaiphong.getTen());
         txtGiuong.setText(loaiphong.getGiuong());
         txtDientich.setText(loaiphong.getDientich());

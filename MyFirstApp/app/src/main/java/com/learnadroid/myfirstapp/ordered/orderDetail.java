@@ -15,6 +15,7 @@ import android.widget.Toast;
 import com.learnadroid.myfirstapp.R;
 import com.learnadroid.myfirstapp.dangnhap.AccountManager;
 import com.learnadroid.myfirstapp.database.ConnectionClass;
+import com.learnadroid.myfirstapp.home.MainActivity;
 import com.learnadroid.myfirstapp.roomtype.roomTypeResult;
 
 import java.sql.Connection;
@@ -100,7 +101,7 @@ public class orderDetail extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 progressDialog.dismiss();
-                startActivity(new Intent(orderDetail.this, DsKhachsanDadat.class));
+                startActivity(new Intent(orderDetail.this, MainActivity.class));
             }
         });
         // hủy phòng

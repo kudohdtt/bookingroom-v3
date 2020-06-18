@@ -4,12 +4,13 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".dangnhap.MainActivity">
+    tools:context=".dangnhap.Login">
 
     <RelativeLayout
         android:id="@+id/logo"
         android:layout_width="match_parent"
         android:layout_height="108dp"
+
         >
 
         <androidx.appcompat.widget.AppCompatImageView
@@ -37,6 +38,7 @@
             />
     </RelativeLayout>
 
+
     <LinearLayout
         android:layout_below="@+id/logo"
         android:id="@+id/form_Signin"
@@ -45,6 +47,21 @@
         android:background="@drawable/backgroundchinh"
         android:gravity="center|top"
         android:orientation="vertical">
+
+        <View
+            android:id="@+id/line_1"
+            android:layout_width="match_parent"
+            android:layout_height="2dp"
+            android:background="#4D131313"
+            app:layout_constraintTop_toTopOf="@+id/logo"
+            />
+        <View
+            android:id="@+id/line_2"
+            android:layout_width="match_parent"
+            android:layout_height="3dp"
+            android:background="#66787777"
+            app:layout_constraintTop_toTopOf="@+id/logo"
+            />
 
         <TextView
             android:layout_width="match_parent"
@@ -105,14 +122,9 @@
             android:layout_marginRight="20dp"
             android:layout_marginTop="9dp"
             android:layout_marginBottom="25dp"
-<<<<<<< Updated upstream
-            android:background="@drawable/botronedittext"
-=======
             android:inputType="textPassword"
             android:background="@drawable/inputtest"
->>>>>>> Stashed changes
             android:hint="Mật khẩu"
-            android:inputType="textPassword"
             android:paddingStart="10dp"
             android:paddingLeft="10dp"
             android:textSize="17sp" />
@@ -128,8 +140,9 @@
             android:text="Đăng nhập"
             android:textColor="#ffff"
             android:textAllCaps="false"
+            android:textStyle="bold|italic"
             android:textSize="25dp"
-            android:textStyle="bold"
+
 
             />
 
@@ -142,7 +155,7 @@
         <LinearLayout
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginTop="100dp"
+            android:layout_marginTop="87dp"
             android:orientation="horizontal">
             <TextView
                 android:layout_width="match_parent"
