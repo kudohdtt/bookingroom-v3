@@ -312,8 +312,8 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         app:layout_constraintBottom_toTopOf="@+id/editAdult"
-        app:layout_constraintEnd_toEndOf="@+id/txtCIdate"
-        app:layout_constraintStart_toStartOf="@+id/txtCIdate"
+        android:layout_marginLeft="40dp"
+        app:layout_constraintStart_toStartOf="@+id/frameLayoutCheckin"
         app:layout_constraintTop_toBottomOf="@+id/txtCIdate" />
 
     <TextView

@@ -74,8 +74,6 @@ public class hotelResult extends AppCompatActivity {
         checkindate = AccountManager.checkindate;
         checkoutdate = AccountManager.checkoutdate;
 
-        Toast.makeText(getApplicationContext(), "keyword: " + checkindate, Toast.LENGTH_LONG).show();
-
         Anhxa ax = new Anhxa();
         ax.execute();
 

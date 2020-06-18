@@ -132,7 +132,7 @@ public class SearchHotel extends Fragment {
                 if(!isValidDate){
 
                     ERcheckin.setText("Checkin date must be smaller than checkout date");
-
+                    ERcheckin.setTextColor(Color.rgb(255, 0, 0));
                 }else if(!isValidAdults || !isValidChildrent || hotel.getText().toString().trim().equals("") || checkoutdate.getText().toString().trim().equals("")
                         || checkindate.getText().toString().trim().equals("") || editAdult.getText().toString().trim().equals("")){
                     Toast.makeText(getContext(), "Please check all field again !", Toast.LENGTH_LONG).show();

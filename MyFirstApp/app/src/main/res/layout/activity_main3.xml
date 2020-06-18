@@ -38,7 +38,7 @@
         android:id="@+id/text"
         android:layout_width="415dp"
         android:layout_height="550dp"
-        android:foreground="#CAFFA726"
+        android:background="#ffd700"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintLeft_toLeftOf="parent"
