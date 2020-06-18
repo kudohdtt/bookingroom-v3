@@ -10,7 +10,7 @@
         android:id="@+id/frameLayoutCheckout"
         android:layout_width="412dp"
         android:layout_height="150dp"
-        android:foreground="#CAFFA115"
+        android:background="@drawable/backgroundtest"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" >
