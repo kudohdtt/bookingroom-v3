@@ -74,7 +74,7 @@ public class hotelListAdapter extends BaseAdapter {
         } else {
             km.setText("Chưa có khuyến mại");
         }
-        price.setText(""+hotel.getPrice());
+        price.setText(""+hotel.getPrice()+"$");
 
         return view;
     }

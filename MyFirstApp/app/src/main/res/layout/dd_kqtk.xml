@@ -191,7 +191,8 @@
         android:textAlignment="center"
         android:layout_marginTop="10dp"
         android:paddingTop="10dp"
-        android:background="@drawable/shadow_textview"
+
+        android:background="@drawable/buttontest"
         android:fontFamily="sans-serif-black"
         />
 

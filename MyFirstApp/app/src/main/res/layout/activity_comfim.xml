@@ -124,7 +124,7 @@
         android:layout_width="90dp"
         android:layout_height="39dp"
         android:background="@drawable/buttontest"
-        android:text="Bắt đầu"
+        android:text="Tiếp tục"
         android:textAllCaps="false"
         android:textColor="#000000"
         android:textSize="14sp"

@@ -19,6 +19,7 @@ import androidx.annotation.RequiresApi;
 import androidx.appcompat.app.AppCompatActivity;
 
 import com.learnadroid.myfirstapp.dangnhap.AccountManager;
+import com.learnadroid.myfirstapp.dangnhap.Login;
 import com.learnadroid.myfirstapp.database.ConnectionClass;
 import com.learnadroid.myfirstapp.R;
 
@@ -34,6 +35,7 @@ public class dangki extends AppCompatActivity {
 
     ConnectionClass connectionClass;
     private Button btTieptuc;
+    private Button back;
     private EditText txtMail;
     private EditText txtPass;
     private TextView txtValidate;
@@ -87,6 +89,7 @@ public class dangki extends AppCompatActivity {
         rePass = findViewById(R.id.txtRepass);
         notpass = findViewById(R.id.notpass);
         checkBox = findViewById(R.id.check);
+        back = findViewById(R.id.btQuaylai);
 
         connectionClass = new ConnectionClass();
         //set su kien
@@ -95,6 +98,13 @@ public class dangki extends AppCompatActivity {
             public void onClick(View v) {
                 Doregister doregister = new Doregister();
                 doregister.execute();
+            }
+        });
+        back.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(dangki.this, Login.class);
+                startActivity(intent);
             }
         });
         //kiem tra điều kiện - form password

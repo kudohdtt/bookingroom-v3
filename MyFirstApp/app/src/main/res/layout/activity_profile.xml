@@ -70,13 +70,13 @@
         android:layout_marginTop="0dp"
         android:layout_marginEnd="-2dp"
         android:layout_marginRight="-2dp"
-        android:background="#6E6C6C"
+        android:background="@drawable/buttontest"
         android:fontFamily="sans-serif-condensed-medium"
         android:linksClickable="false"
         android:textAppearance="@style/TextAppearance.AppCompat.Body1"
         android:gravity="center"
         android:text="Nhấp để thay đổi"
-        android:textColor="#ffffff"
+        android:textColor="#000000"
         android:textStyle="bold|italic"
         android:textSize="20dp"/>
 
@@ -340,12 +340,6 @@
         android:textColor="#000000" />
 
 
-    <View
-        android:layout_width="wrap_content"
-        android:layout_height="1dp"
-        android:layout_alignParentBottom="true"
-        android:layout_marginBottom="129dp"
-        android:background="#000000" />
 
     <FrameLayout
         android:id="@+id/frame4"
@@ -354,46 +348,43 @@
         android:layout_alignParentEnd="true"
         android:layout_alignParentBottom="true"
         android:layout_marginEnd="0dp"
-        android:layout_marginBottom="48dp"
+        android:layout_marginBottom="80dp"
         android:background="@drawable/backgroundtest">
 
     </FrameLayout>
 
     <Button
         android:id="@+id/btLuutru"
-        android:layout_width="110dp"
-        android:layout_height="50dp"
+        android:layout_width="108dp"
+        android:layout_height="40dp"
         android:layout_alignParentStart="true"
         android:layout_alignParentBottom="true"
         android:layout_marginStart="55dp"
-        android:layout_marginBottom="52dp"
-        android:background="@drawable/buttontest"
-        android:fontFamily="sans-serif-condensed-medium"
+        android:layout_marginBottom="90dp"
+        android:background="@drawable/bobutton"
         android:gravity="center"
         android:linksClickable="false"
         android:text="Lưu trữ"
         android:textAllCaps="false"
         android:textColor="#000000"
-        android:textSize="20dp"
-        android:textStyle="bold" />
+      />
 
     <Button
         android:id="@+id/btDangxuat"
-        android:layout_width="110dp"
-        android:layout_height="50dp"
+        android:layout_width="108dp"
+        android:layout_height="40dp"
         android:layout_alignParentEnd="true"
         android:layout_alignParentBottom="true"
         android:layout_marginEnd="45dp"
-        android:layout_marginBottom="52dp"
-        android:background="@drawable/buttontest"
-        android:fontFamily="sans-serif-condensed-medium"
+        android:layout_marginBottom="90dp"
+        android:background="@drawable/cancelbuton"
         android:gravity="center"
         android:linksClickable="false"
         android:text="Đăng xuất"
         android:textAllCaps="false"
         android:textColor="#000000"
-        android:textSize="20dp"
-        android:textStyle="bold" />
+
+         />
 
 
 </RelativeLayout>
