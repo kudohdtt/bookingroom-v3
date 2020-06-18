@@ -5,30 +5,30 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:background="@drawable/backgroundtest"
     tools:context="com.learnadroid.myfirstapp.dangki.Main2Activity">
-
     <ImageView
         android:id="@+id/imageView8"
-        android:layout_width="48dp"
+        android:layout_width="35dp"
         android:layout_height="35dp"
-        android:layout_marginStart="72dp"
-        android:layout_marginTop="27dp"
+        android:layout_marginStart="102dp"
+        android:layout_marginTop="8dp"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:srcCompat="@drawable/chiela"
+        android:background="@drawable/bieutuong"
         tools:layout_editor_absoluteX="27dp" />
 
     <TextView
         android:id="@+id/textView"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="23dp"
+        android:layout_marginTop="5dp"
         android:text="@string/booking_room"
         android:textAppearance="@style/TextAppearance.AppCompat.Body1"
-        android:textColor="#FFA726"
+        android:textColor="#ffd700"
         android:textColorHighlight="#FFFFFF"
         android:textSize="30sp"
-        android:textStyle="bold"
+        android:fontFamily="@font/dancing_script_bold"
         app:layout_constraintHorizontal_bias="0.57"
         app:layout_constraintLeft_toLeftOf="parent"
         app:layout_constraintRight_toRightOf="parent"
@@ -52,9 +52,10 @@
     <FrameLayout
         android:id="@+id/text"
         android:layout_width="415dp"
-        android:layout_height="550dp"
-        android:layout_marginTop="108dp"
-        android:foreground="#CAFFA726"
+        android:layout_height="match_parent"
+        android:layout_marginTop="62dp"
+        android:layout_marginBottom="80dp"
+        android:background="@drawable/backgroundchinh"
         app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintLeft_toLeftOf="parent"
         app:layout_constraintRight_toRightOf="parent"
@@ -80,7 +81,7 @@
         app:layout_constraintLeft_toLeftOf="parent"
         app:layout_constraintRight_toRightOf="parent"
         app:layout_constraintTop_toTopOf="@+id/text"
-        app:layout_constraintVertical_bias="0.929" />
+        app:layout_constraintVertical_bias="0.829" />
 
     <Button
         android:id="@+id/btHuy"
@@ -100,7 +101,7 @@
         app:layout_constraintLeft_toLeftOf="parent"
         app:layout_constraintRight_toRightOf="parent"
         app:layout_constraintTop_toTopOf="@+id/text"
-        app:layout_constraintVertical_bias="0.929" />
+        app:layout_constraintVertical_bias="0.829" />
 
     <TextView
         android:id="@+id/textView2"
@@ -143,7 +144,7 @@
         app:layout_constraintHorizontal_bias="0.306"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="@+id/text"
-        app:layout_constraintVertical_bias="0.721" />
+        app:layout_constraintVertical_bias="0.621" />
 
     <Button
         android:id="@+id/bt1"
@@ -159,7 +160,7 @@
         app:layout_constraintHorizontal_bias="0.688"
         app:layout_constraintStart_toStartOf="@+id/text"
         app:layout_constraintTop_toTopOf="@+id/text"
-        app:layout_constraintVertical_bias="0.683" />
+        app:layout_constraintVertical_bias="0.583" />
 
 
 
