@@ -2,9 +2,10 @@
 <androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
+    android android:background="@drawable/backgroundtest"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:backgroundTint="#EF5350"
+
     tools:context=".home.MainActivity">
 
     <View
@@ -27,12 +28,23 @@
         android:id="@+id/frameLayoutCheckin"
         android:layout_width="match_parent"
         android:layout_height="575.571dp"
-        android:layout_marginTop="76dp"
-        android:foreground="#CAFFA726"
+        android:layout_marginTop="80dp"
+        android:background="@drawable/backgroundchinh"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="1.0"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
+
+    <ImageView
+        android:id="@+id/chananh2"
+        android:layout_width="match_parent"
+        android:layout_height="142dp"
+        android:layout_marginTop="190dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+
+        app:layout_constraintTop_toTopOf="parent"
+        app:srcCompat="@drawable/ic_chananh" />
 
     <TextView
         android:id="@+id/textViewChild"
@@ -52,18 +64,18 @@
         android:id="@+id/logo"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:layout_marginTop="15dp"
+        android:fontFamily="@font/dancing_script_bold"
         android:text="@string/booking_room"
         android:textAppearance="@style/TextAppearance.AppCompat.Body1"
-        android:textColor="#FFA726"
+        android:textColor="#ffd700"
         android:textColorHighlight="#FFFFFF"
-        android:textSize="30sp"
+        android:textSize="36sp"
         android:textStyle="bold"
-        app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintHorizontal_bias="0.57"
         app:layout_constraintLeft_toLeftOf="parent"
         app:layout_constraintRight_toRightOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.041" />
+        app:layout_constraintTop_toTopOf="parent" />
 
     <ImageView
         android:id="@+id/chiecla"
@@ -82,14 +94,14 @@
         android:layout_height="40dp"
         android:layout_marginStart="150dp"
         android:layout_marginEnd="150dp"
-        android:layout_marginBottom="130dp"
-        android:background="@drawable/bobutton"
+        android:layout_marginBottom="100dp"
+        android:background="@drawable/buttontest"
         android:fontFamily="sans-serif-condensed-medium"
         android:gravity="center"
         android:linksClickable="false"
         android:text="@string/search"
         android:textAppearance="@style/TextAppearance.AppCompat.Body1"
-        android:textColor="#FFFFFF"
+        android:textColor="#000000"
         android:textStyle="bold|italic"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
@@ -101,7 +113,7 @@
         android:id="@+id/cityhotel"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="45dp"
+        android:layout_marginTop="80dp"
         android:layout_marginEnd="230dp"
         android:fontFamily="serif"
         android:text="@string/city_hotel"
@@ -160,13 +172,13 @@
         android:id="@+id/edtCity"
         android:layout_width="290dp"
         android:layout_height="35dp"
-        android:layout_marginTop="75dp"
+        android:layout_marginTop="110dp"
         android:autofillHints=""
-        android:background="@drawable/botronedittext"
+        android:background="@drawable/inputtest"
         android:backgroundTint="@null"
+        android:hint="Tên khách sạn hoặc thành phố..."
         android:inputType="text"
         android:padding="5dp"
-        android:hint="Tên khách sạn hoặc thành phố..."
         android:singleLine="true"
         android:textAlignment="textStart"
         android:textColor="#330000"
@@ -181,7 +193,7 @@
         android:layout_height="35dp"
         android:layout_marginStart="14dp"
         android:layout_marginTop="35dp"
-        android:background="@drawable/botronedittext"
+        android:background="@drawable/inputtest"
         android:backgroundTint="@null"
         android:importantForAutofill="no"
         android:inputType="number"
@@ -200,7 +212,7 @@
         android:layout_marginTop="35dp"
         android:layout_marginEnd="60dp"
         android:autofillHints=""
-        android:background="@drawable/botronedittext"
+        android:background="@drawable/inputtest"
         android:backgroundTint="@null"
         android:inputType="number"
         android:padding="5dp"
@@ -215,7 +227,7 @@
         android:layout_width="57dp"
         android:layout_height="74dp"
         android:layout_marginStart="86dp"
-        android:layout_marginTop="190dp"
+        android:layout_marginTop="225dp"
         android:layout_marginEnd="1dp"
         app:layout_constraintBottom_toTopOf="@+id/edtCity"
         app:layout_constraintEnd_toStartOf="@+id/edtCity"
@@ -229,13 +241,13 @@
         android:layout_width="370dp"
         android:layout_height="116dp"
         android:layout_marginStart="25dp"
-        android:layout_marginTop="38dp"
+        android:layout_marginTop="40dp"
         android:layout_marginEnd="25dp"
+        android:background="@android:drawable/dialog_holo_light_frame"
+        android:scaleType="centerCrop"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/chiecla"
-        android:background="@android:drawable/dialog_holo_light_frame"
-        android:scaleType="centerCrop"
         app:srcCompat="@drawable/search" />
 
     <EditText
@@ -248,7 +260,7 @@
         android:textSize="18dp"
         android:textColor="@color/black"
         android:gravity="center"
-        android:background="@drawable/botronedittext"
+        android:background="@drawable/inputtest"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/textViewCheckin" />
 
@@ -262,7 +274,7 @@
         android:textSize="18dp"
         android:textColor="@color/black"
         android:gravity="center"
-        android:background="@drawable/botronedittext"
+        android:background="@drawable/inputtest"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/textViewCheckout" />
 
@@ -270,8 +282,8 @@
         android:id="@+id/imageView"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="36dp"
-        android:layout_marginEnd="65dp"
+        android:layout_marginTop="34dp"
+        android:layout_marginEnd="67dp"
         app:layout_constraintEnd_toStartOf="@+id/txtCOdate"
         app:layout_constraintTop_toBottomOf="@+id/edtCity"
         app:srcCompat="@drawable/ic_calendar2_foreground" />
@@ -280,8 +292,8 @@
         android:id="@+id/imageView2"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="36dp"
-        android:layout_marginEnd="61dp"
+        android:layout_marginTop="34dp"
+        android:layout_marginEnd="64dp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/edtCity"
         app:srcCompat="@drawable/ic_calendar2_foreground" />
@@ -291,7 +303,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginStart="4dp"
-        android:layout_marginTop="68dp"
+        android:layout_marginTop="103dp"
         android:layout_marginEnd="7dp"
         android:background="@null"
         app:layout_constraintEnd_toEndOf="parent"
