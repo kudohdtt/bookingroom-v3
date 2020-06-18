@@ -121,17 +121,17 @@
         android:id="@+id/btTieptuc"
         android:layout_width="90dp"
         android:layout_height="39dp"
-        android:background="@drawable/bobutton"
+        android:background="@drawable/buttontest"
         android:text="Bắt đầu"
         android:textAllCaps="false"
-        android:textColor="#e5f3fd"
+        android:textColor="#000000"
         android:textSize="14sp"
         android:textStyle="italic"
         app:layout_constraintBottom_toBottomOf="@+id/text"
         app:layout_constraintHorizontal_bias="0.498"
-        app:layout_constraintLeft_toLeftOf="parent"
+        android:layout_margin="155dp"
         app:layout_constraintRight_toRightOf="parent"
-        app:layout_constraintTop_toTopOf="@+id/text"
+
         app:layout_constraintVertical_bias="0.838" />
 
 
