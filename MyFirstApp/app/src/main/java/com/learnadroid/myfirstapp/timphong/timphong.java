@@ -15,12 +15,14 @@ import android.view.View;
 import android.widget.Button;
 import android.widget.DatePicker;
 import android.widget.EditText;
+import android.widget.ImageButton;
 import android.widget.ImageView;
 import android.widget.TextView;
 import android.widget.Toast;
 
 import com.learnadroid.myfirstapp.R;
 import com.learnadroid.myfirstapp.dangnhap.AccountManager;
+import com.learnadroid.myfirstapp.ggMap.GoogleMapAPI;
 import com.learnadroid.myfirstapp.roomtype.roomTypeResult;
 import com.learnadroid.myfirstapp.timkiemkhachsan.checkin;
 import com.learnadroid.myfirstapp.timkiemkhachsan.checkout;
@@ -42,6 +44,7 @@ public class timphong extends AppCompatActivity {
     private EditText editChildrent;
     private ImageView image;
     private TextView name;
+    private ImageButton back;
 
     private Dialog checkInDialog;
     private DatePicker datePicker;
@@ -82,6 +85,7 @@ public class timphong extends AppCompatActivity {
         editAdult = findViewById(R.id.editAdult2);
         editChildrent = findViewById(R.id.editChild2);
         search = findViewById(R.id.buttonSearch2);
+        back = findViewById(R.id.imageView10);
 
         ERadults = findViewById(R.id.ERadults2);
         ERchildrent = findViewById(R.id.ERchildrent2);
@@ -144,6 +148,14 @@ public class timphong extends AppCompatActivity {
                     AccountManager.checkindate = checkindate.getText().toString();
                     startActivity(intent);
                 }
+            }
+        });
+
+        back.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(timphong.this, GoogleMapAPI.class);
+                startActivity(intent);
             }
         });
 

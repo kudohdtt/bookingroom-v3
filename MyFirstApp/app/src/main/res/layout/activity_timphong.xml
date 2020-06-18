@@ -320,13 +320,13 @@
         app:layout_constraintStart_toStartOf="@+id/editChild2"
         app:layout_constraintTop_toBottomOf="@+id/editChild2" />
 
-    <ImageView
+    <ImageButton
         android:id="@+id/imageView10"
-        android:layout_width="52dp"
+        android:layout_width="56dp"
         android:layout_height="50dp"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:srcCompat="@drawable/back" />
+        android:background="@drawable/back" />
 
 
 </androidx.constraintlayout.widget.ConstraintLayout>

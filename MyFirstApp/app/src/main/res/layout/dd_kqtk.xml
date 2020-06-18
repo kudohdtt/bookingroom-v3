@@ -116,7 +116,8 @@
         android:layout_alignParentStart="true"
         android:layout_below="@+id/image_hotel"
         app:srcCompat="@drawable/locationicon"
-        android:tint="#045D85"/>
+        android:tint="#98ccfd"/>
+
     <TextView
         android:id="@+id/text_location_hotel"
         android:layout_below="@+id/image_hotel"
@@ -163,6 +164,7 @@
         android:layout_marginEnd="5dp"
         android:layout_marginTop="15dp"
         android:padding="3dp"
+        android:tint="#98ccfd"
          />
     <TextView
         android:id="@+id/ttkm_hotel"

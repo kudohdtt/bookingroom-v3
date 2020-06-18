@@ -6,19 +6,19 @@
     tools:context=".timkiemkhachsan.hotelResult"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="#EFECEC"
+    android:background="@drawable/backgroundchinh"
 
     >
 
-    <Button
+    <ImageButton
 
         android:id="@+id/btn_back"
-        android:layout_width="40dp"
-        android:layout_height="40dp"
+        android:layout_width="56dp"
+        android:layout_height="50dp"
         android:layout_marginStart="16dp"
         android:layout_marginTop="10dp"
-        android:layout_marginBottom="20dp"
-        android:background="@drawable/back_button"
+        android:layout_marginBottom="2dp"
+        android:background="@drawable/back2"
         app:layout_constraintBottom_toTopOf="@id/Back"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
@@ -35,7 +35,7 @@
         android:layout_marginEnd="16dp"
         android:layout_marginRight="16dp"
         android:layout_marginBottom="5dp"
-        android:background="@android:drawable/dialog_holo_light_frame"
+        android:background="@drawable/background3"
         >
 
         <Button
@@ -46,10 +46,10 @@
             android:layout_alignParentBottom="true"
             android:layout_marginStart="32dp"
             android:layout_marginBottom="9dp"
-            android:background="@drawable/bobutton"
-            android:text="Bo Loc"
+            android:background="@drawable/buttontest"
+            android:text="Bộ lọc"
             android:textAllCaps="false"
-            android:textColor="#fff" />
+            android:textColor="#000000" />
 
         <Button
             android:id="@+id/bt_Sapxep"
@@ -61,10 +61,10 @@
             android:layout_marginLeft="22dp"
             android:layout_marginEnd="32dp"
             android:layout_marginBottom="10dp"
-            android:background="@drawable/bobutton"
-            android:text="Sapxep"
+            android:background="@drawable/buttontest"
+            android:text="Sắp xếp"
             android:textAllCaps="false"
-            android:textColor="#fff" />
+            android:textColor="#000000" />
     </RelativeLayout>
 
     <ListView

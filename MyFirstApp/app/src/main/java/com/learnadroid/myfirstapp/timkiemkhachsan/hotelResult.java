@@ -9,6 +9,7 @@ import android.os.Bundle;
 import android.view.View;
 import android.widget.AdapterView;
 import android.widget.Button;
+import android.widget.ImageButton;
 import android.widget.ListView;
 import android.widget.Toast;
 
@@ -40,7 +41,7 @@ public class hotelResult extends AppCompatActivity {
     private String checkindate;
     private String checkoutdate;
     private int id_city;
-    Button back;
+    ImageButton back;
 
     @RequiresApi(api = Build.VERSION_CODES.M)
     @Override
