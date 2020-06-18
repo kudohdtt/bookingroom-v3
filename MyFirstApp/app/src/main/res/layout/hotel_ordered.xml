@@ -3,6 +3,7 @@
     xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:background="@drawable/backgroundtest"
     >
 
     <ImageView
@@ -20,10 +21,11 @@
         android:layout_marginLeft="10dp"
         android:layout_toRightOf="@+id/imageviewHinh"
         android:paddingTop="24dp"
-        android:text="Tên"
-        android:textColor="#000000"
-        android:textSize="14sp"
-        android:textStyle="bold" />
+        android:text="Hùng hoa hồng"
+        android:fontFamily="@font/dancing_script_bold"
+        android:textSize="22dp"
+        android:textColor="#ffd700"
+        />
 
     <TextView
         android:id="@+id/txtThanhpho"
@@ -52,7 +54,7 @@
         android:layout_width="233dp"
         android:layout_height="wrap_content"
         android:layout_below="@+id/txtThanhpho"
-        android:layout_marginStart="23dp"
+        android:layout_marginStart="25dp"
         android:layout_marginTop="23dp"
         android:layout_toEndOf="@+id/imageviewHinh"
         android:layout_toRightOf="@+id/imageviewHinh"
