@@ -10,6 +10,7 @@
         android:id="@+id/logo"
         android:layout_width="match_parent"
         android:layout_height="108dp"
+        android:background="#05848d"
 
         >
 
@@ -17,8 +18,9 @@
             android:layout_marginLeft="50dp"
             android:id="@+id/image_logo"
             android:layout_width="66dp"
-            android:layout_height="match_parent"
-            app:srcCompat="@drawable/chiela"
+            android:layout_height="66dp"
+            android:layout_marginTop="20dp"
+            app:srcCompat="@drawable/bieutuong"
             android:paddingRight="8dp"
             android:layout_marginStart="80dp"/>
 
@@ -26,15 +28,14 @@
             android:id="@+id/text_logo"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_alignParentRight="true"
             android:layout_centerVertical="true"
             android:layout_toRightOf="@+id/image_logo"
             android:text="Booking room"
             android:textAppearance="@style/TextAppearance.AppCompat.Body1"
-            android:textColor="#FFA726"
+            android:textColor="#ffd700"
             android:textColorHighlight="#FFFFFF"
-            android:textSize="30sp"
-            android:textStyle="bold"
+            android:textSize="40dp"
+            android:fontFamily="@font/dancing_script_bold"
             />
     </RelativeLayout>
 
